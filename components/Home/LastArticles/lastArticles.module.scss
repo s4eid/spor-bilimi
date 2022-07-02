@@ -1,0 +1,20 @@
+@use "../../../sass/fonts/fonts.module.scss";
+.mainC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  width: 100%;
+  flex-wrap: wrap;
+  h2 {
+    font-size: fonts.$secondary_font_size;
+    margin-bottom: 40px;
+  }
+}
+.articleHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}

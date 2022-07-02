@@ -1,0 +1,10 @@
+@mixin title($color) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: $color;
+  margin-bottom: 40px;
+  h2 {
+    font-size: 20px;
+  }
+}

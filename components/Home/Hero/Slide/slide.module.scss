@@ -1,0 +1,46 @@
+@use "../../../../sass/colors/colors.module.scss";
+@use "../../../../sass/fonts/fonts.module.scss";
+@use "../../../../sass/components/buttons/buttons.module.scss" as btn;
+.childs {
+  display: flex;
+  justify-content: center;
+  cursor: grab;
+}
+.imageC {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  img {
+    object-fit: contain;
+    pointer-events: none;
+  }
+}
+.textC {
+  width: 600px;
+  button {
+    @include btn.button(colors.$secondary_dark, colors.$primary_white);
+    border: 2px solid colors.$secondary_dark;
+  }
+  .title {
+    font-size: fonts.$therd_font_size;
+    font-weight: bold;
+  }
+  .details {
+    color: colors.$primary_white;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .childs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .imageC {
+    width: 300px;
+    height: 300px;
+  }
+  .textC {
+    width: 100%;
+    padding: 20px;
+  }
+}

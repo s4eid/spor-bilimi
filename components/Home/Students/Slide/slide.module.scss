@@ -1,0 +1,22 @@
+.mainHolder {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  object-fit: cover;
+  width: 200px;
+  align-items: center;
+  border-radius: 5px 5px 0px 0px;
+  height: 200px;
+  img {
+    object-fit: cover;
+    pointer-events: none;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mainHolder {
+    width: 150px;
+    height: 150px;
+  }
+}

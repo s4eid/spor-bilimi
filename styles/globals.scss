@@ -1,0 +1,27 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans", "Source Code Pro", sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  overflow-x: hidden;
+}
+button {
+  font-family: "Source Code Pro", monospace;
+  font-weight: bolder;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}

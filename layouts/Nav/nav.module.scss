@@ -1,0 +1,83 @@
+@use "../../sass/colors/colors.module.scss";
+@use "../../sass/fonts/fonts.module.scss";
+@use "../../sass/components/buttons/buttons.module.scss" as btn;
+.mainContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: colors.$primary_blue;
+  color: colors.$primary_white;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  //   padding: 10px;
+}
+.logoContainer {
+  display: flex;
+  justify-content: space-around;
+  font-size: fonts.$therd_font_size;
+  font-weight: bold;
+  width: 20%;
+}
+.linksContainer {
+  width: 60%;
+  .linksHolder {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    justify-content: space-around;
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.loginHolder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 20%;
+  justify-content: center;
+}
+.loginContainer {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  right: 0;
+  // width: 33%;
+  margin-right: 5px;
+  button {
+    @include btn.button(colors.$primary_white, colors.$secondary_dark);
+  }
+}
+.menuContainer {
+  display: none;
+  text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+  .linksContainer {
+    display: none;
+  }
+  .loginHolder {
+    width: 33%;
+    .loginContainer {
+      position: relative;
+    }
+  }
+  .logoContainer {
+    width: 33%;
+  }
+  .menuContainer {
+    display: block;
+    width: 33%;
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .loginContainer {
+    display: none;
+  }
+}

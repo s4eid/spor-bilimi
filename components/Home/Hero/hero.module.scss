@@ -1,0 +1,74 @@
+@use "../../../sass/colors/colors.module.scss";
+@use "../../../sass/fonts/fonts.module.scss";
+@use "../../../sass/components/buttons/buttons.module.scss" as btn;
+.mainC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$primary_blue;
+  height: 500px;
+  width: 100%;
+  //   border: 1px solid colors.$secondary_dark;
+  position: relative;
+}
+.waveC {
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  bottom: 0px;
+  img {
+    object-fit: fill;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 1;
+  }
+}
+.right {
+  position: absolute;
+  z-index: 2;
+  border-radius: 50px;
+  background-color: colors.$primary_white;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 100px;
+  border: 3px solid colors.$primary_dark;
+  color: colors.$primary_dark;
+  font-size: fonts.$therd_font_size;
+  cursor: pointer;
+}
+.left {
+  position: absolute;
+  border: 3px solid colors.$primary_dark;
+  color: colors.$primary_dark;
+  z-index: 2;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: colors.$primary_white;
+  left: 0px;
+  margin-left: 100px;
+  cursor: pointer;
+  font-size: fonts.$therd_font_size;
+}
+
+@media screen and (max-width: 1080px) {
+  .waveC {
+    height: 50px;
+  }
+  .mainC {
+    height: 600px;
+  }
+}

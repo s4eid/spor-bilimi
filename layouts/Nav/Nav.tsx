@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import nav from "./nav.module.scss";
-import { navItems } from "../../data/nav.data";
+import { navItems, navSItems } from "../../data/nav.data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import SideBar from "./SideBar/SideBar";
+import Link from "next/link";
 
 type Props = {
   children: JSX.Element;
@@ -18,7 +19,11 @@ const Nav = ({ children }: Props) => {
         <div className={nav.linksContainer}>
           <ul className={nav.linksHolder}>
             {navItems.map((n, index) => (
-              <li key={index}>{n.name}</li>
+              <Link key={index} href={n.link}>
+                <li>
+                  <a href={n.link}>{n.name}</a>
+                </li>
+              </Link>
             ))}
           </ul>
         </div>
@@ -33,7 +38,7 @@ const Nav = ({ children }: Props) => {
             className={!navOpen ? nav.burger : nav.burgerOpen}
           />
         </div>
-        <SideBar setOpen={setNavOpen} navItems={navItems} isOpen={navOpen} />
+        <SideBar setOpen={setNavOpen} navItems={navSItems} isOpen={navOpen} />
       </div>
       {children}
     </>

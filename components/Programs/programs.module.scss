@@ -1,0 +1,39 @@
+@use "../../sass/colors/colors.module.scss";
+@use "../../sass/fonts/fonts.module.scss";
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+.mainC {
+  background-color: colors.$primary_blue;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100px;
+
+  align-items: center;
+}
+.title {
+  align-items: center;
+  width: 33%;
+  font-weight: bold;
+  h2 {
+    font-size: fonts.$secondary_font_size;
+  }
+  color: colors.$primary_white;
+}
+.programContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.programMainC {
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}

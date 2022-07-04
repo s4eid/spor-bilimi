@@ -21,7 +21,7 @@ const Article = ({ a }: Props) => {
     <div className={article.holderC}>
       <div className={article.articleC}>
         <div className={article.imgC}>
-          <Image src={a.img} layout="fill" width={200} height={160} />
+          <Image src={a.img} layout="fill" />
         </div>
 
         <div className={article.textC}>

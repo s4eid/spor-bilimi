@@ -1,0 +1,117 @@
+@use "../../sass/colors/colors.module.scss";
+@use "../../sass/fonts/fonts.module.scss";
+$width: 33%;
+.mainContainer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  //   height: 230px;
+  .linksHolder {
+    border-top: 2px solid colors.$primary_blue;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    .linksC {
+      display: flex;
+      justify-content: flex-start;
+      width: 33%;
+      height: 100%;
+      align-items: center;
+      flex-direction: column;
+      h2 {
+        font-size: fonts.$secondary_font_size;
+        color: colors.$secondary_dark;
+      }
+      p {
+        margin: 5px;
+        color: colors.$therd_dark;
+      }
+    }
+  }
+  .container {
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+    background-color: colors.$secondary_dark;
+    margin-top: 10px;
+  }
+  .copy {
+    width: $width;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    color: colors.$primary_white;
+  }
+  .payProviders {
+    width: $width;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    img {
+      object-fit: contain;
+    }
+  }
+  .social {
+    width: $width;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    .IconHolder {
+      background-color: colors.$primary_white;
+      color: colors.$secondary_dark;
+      padding: 5px;
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: fonts.$therd_font_size;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-wrap: wrap;
+    gap: 30px;
+    .copy {
+      width: 100%;
+      justify-content: center;
+      gap: 0px;
+    }
+    .payProviders {
+      width: 100%;
+    }
+    .social {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .linksHolder {
+    flex-wrap: wrap;
+  }
+  .linksC {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 20px;
+  }
+  .copy {
+    flex-direction: column;
+    text-align: center;
+    h2 {
+      margin-top: 0px;
+    }
+  }
+}

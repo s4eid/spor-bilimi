@@ -1,0 +1,17 @@
+@use "../../../../sass/colors/colors.module.scss";
+
+.mainC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.videoHolder {
+  width: 600px;
+  background-color: gray;
+  height: 300px;
+  border: 10px solid colors.$primary_dark;
+  border-radius: 10px;
+  z-index: 2;
+}

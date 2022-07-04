@@ -1,0 +1,42 @@
+@use "../../../sass/colors/colors.module.scss";
+@use "../../../sass/components/titles/titles.module.scss";
+@use "../../../sass/fonts/fonts.module.scss";
+
+.mainC {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  align-items: center;
+}
+.title {
+  @include titles.title(colors.$primary_dark);
+}
+.detailsC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.detail {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  //   .main {
+  //     &:nth-child(1) {
+  //       border-right: 5px solid colors.$primary_blue;
+  //     }
+  //     &:nth-child(2) {
+  //       border-right: 5px solid colors.$secondary_blue;
+  //     }
+  //     &:nth-child(3) {
+  //       border-right: 5px solid colors.$therd_blue;
+  //     }
+  //   }
+}
+.main {
+  padding: 10px;
+  border-right: 5px solid colors.$therd_blue;
+  font-size: fonts.$therd_font_size;
+  font-weight: bold;
+}

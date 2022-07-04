@@ -1,0 +1,48 @@
+@use "../../sass/colors/colors.module.scss";
+.mainContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+.planC {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-around;
+  gap: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  align-items: center;
+}
+.planHolder {
+  display: flex;
+  justify-content: flex-start;
+  border-right: 3px solid colors.$primary_blue;
+  border-left: 3px solid colors.$primary_blue;
+  border-bottom: 3px solid colors.$primary_blue;
+  border-top: 10px solid colors.$primary_blue;
+  border-radius: 10px;
+  &:nth-child(2) {
+    border-right: 3px solid colors.$secondary_blue;
+    border-left: 3px solid colors.$secondary_blue;
+    border-bottom: 3px solid colors.$secondary_blue;
+    border-top: 10px solid colors.$secondary_blue;
+  }
+  &:nth-child(3) {
+    border-right: 3px solid colors.$therd_blue;
+    border-left: 3px solid colors.$therd_blue;
+    border-bottom: 3px solid colors.$therd_blue;
+    border-top: 10px solid colors.$therd_blue;
+  }
+  padding: 30px;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 850px) {
+  .planC {
+    flex-direction: column;
+  }
+}

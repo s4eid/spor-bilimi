@@ -1,6 +1,7 @@
 @use "../../sass/colors/colors.module.scss";
 @use "../../sass/fonts/fonts.module.scss";
 @use "../../sass/components/buttons/buttons.module.scss" as btn;
+@use "../../sass/components/hovers/hovers.module.scss";
 .mainContainer {
   display: flex;
   justify-content: space-around;
@@ -18,6 +19,7 @@
   justify-content: space-around;
   font-size: fonts.$therd_font_size;
   font-weight: bold;
+  cursor: pointer;
   width: 20%;
 }
 .linksContainer {
@@ -30,6 +32,12 @@
     justify-content: space-around;
     li {
       list-style: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        @include hovers.hover(colors.$secondary_dark, transparent);
+      }
     }
   }
 }

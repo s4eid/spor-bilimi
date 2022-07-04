@@ -1,0 +1,4 @@
+@mixin hover($color, $bg) {
+  color: $color;
+  background-color: $bg;
+}

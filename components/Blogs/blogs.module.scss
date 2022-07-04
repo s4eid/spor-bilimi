@@ -1,0 +1,58 @@
+@use "../../sass/colors/colors.module.scss";
+@use "../../sass/fonts/fonts.module.scss";
+.mainContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 60px;
+  flex-direction: column;
+}
+.mainC {
+  background-color: colors.$primary_blue;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100px;
+
+  align-items: center;
+}
+.title {
+  align-items: center;
+  width: 33%;
+  font-weight: bold;
+  h2 {
+    font-size: fonts.$secondary_font_size;
+  }
+  color: colors.$primary_white;
+}
+
+.blogsC {
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 50px;
+}
+
+.blogHolder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  //   border-bottom: 2px solid colors.$therd_dark;
+  border-radius: 10px;
+  //   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  gap: 20px;
+  position: relative;
+  //   border-radius: 10px;
+  padding: 20px;
+  padding-top: 60px;
+  //   padding-botton: 60px;
+}
+
+@media screen and (max-width: 750px) {
+  .blogHolder {
+    flex-direction: column;
+  }
+}

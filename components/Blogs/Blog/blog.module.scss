@@ -1,0 +1,84 @@
+@use "../../../sass/colors/colors.module.scss";
+@use "../../../sass/components/buttons/buttons.module.scss";
+@use "../../../sass/fonts/fonts.module.scss";
+.authorC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  gap: 10px;
+  top: 10px;
+  font-weight: bold;
+  color: colors.$primary_dark;
+  left: 20px;
+}
+.date {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  gap: 10px;
+  top: 10px;
+  right: 20px;
+  min-height: 30px;
+  color: colors.$therd_dark;
+  p {
+    margin: 0px;
+  }
+}
+.profile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  img {
+    object-fit: cover;
+    border-radius: 50px;
+  }
+}
+.imageC {
+  position: relative;
+  height: 200px;
+  width: 50%;
+  img {
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.contentC {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  button {
+    @include buttons.button(colors.$primary_white, colors.$primary_blue);
+  }
+  p {
+    color: colors.$therd_dark;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .contentC {
+    width: 100%;
+  }
+  .imageC {
+    width: 100%;
+    height: 300px;
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .date {
+    font-size: fonts.$small_font_size;
+  }
+}

@@ -10,8 +10,8 @@ export const navItems = [
     id: 2,
   },
   {
-    name: "Programlar",
-    link: "/programs",
+    name: "Blog",
+    link: "/blogs",
     id: 3,
   },
   {
@@ -32,8 +32,8 @@ export const navSItems = [
     id: 2,
   },
   {
-    name: "Programlar",
-    link: "/programs",
+    name: "Blog",
+    link: "/blogs",
     id: 3,
   },
   {

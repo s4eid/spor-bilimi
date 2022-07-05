@@ -1,0 +1,70 @@
+@use "../../sass/colors/colors.module.scss";
+@use "../../sass/fonts/fonts.module.scss";
+@use "../../sass/components/buttons/buttons.module.scss";
+
+.mainC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: rgb(0, 129, 239);
+  background: linear-gradient(
+    100deg,
+    rgba(0, 129, 239, 1) 0%,
+    rgba(45, 105, 235, 1) 50%,
+    rgba(46, 51, 235, 1) 100%
+  );
+  //   background-image: url("/optimized.jpg");
+  //   background-color: ;
+  //   background-size: cover;
+}
+.back {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  font-size: fonts.$therd_font_size;
+  cursor: pointer;
+  color: colors.$primary_white;
+}
+.left {
+  font-size: fonts.$secondary_font_size;
+}
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  color: colors.$primary_white;
+
+  h1 {
+    font-size: 50px;
+    background-image: linear-gradient(45deg, #fff, #0081ef);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+}
+.icon {
+  font-size: fonts.$therd_font_size;
+}
+.icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 850px) {
+  .header {
+    display: none;
+  }
+}

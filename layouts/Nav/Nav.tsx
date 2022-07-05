@@ -29,7 +29,9 @@ const Nav = ({ children }: Props) => {
         </div>
         <div className={nav.loginHolder}>
           <div className={nav.loginContainer}>
-            <button>Login/Register</button>
+            <Link href="/login">
+              <button>Login/Register</button>
+            </Link>
           </div>
         </div>
         <div className={nav.menuContainer} onClick={() => setNavOpen(!navOpen)}>

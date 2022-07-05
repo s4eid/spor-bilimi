@@ -32,3 +32,13 @@
     z-index: 1;
   }
 }
+
+@media screen and (max-width: 1080px) {
+  .waveC {
+    height: 50px;
+  }
+
+  .header {
+    height: 600px;
+  }
+}

@@ -17,36 +17,24 @@ const Footer = ({ children }: Props) => {
     <>
       {children}
       <div className={footer.mainContainer}>
-        <div className={footer.linksHolder}>
-          <div className={footer.linksC}>
-            <h2>Policy</h2>
-            <p>Distance And Sales</p>
-            <p>Privacy And Policy</p>
-          </div>
-          <div className={footer.linksC}>
-            <h2>Programs</h2>
-            <p>12 Week</p>
-            <p>Movie Star Body</p>
-            <p>Diet Mastery</p>
-          </div>
-          <div className={footer.linksC}>
-            <h2>Coporate</h2>
-            <p>About Us</p>
-            <p>Contact</p>
-          </div>
-        </div>
-        <div className={footer.container}>
-          <div className={footer.copy}>
-            <h2>S B</h2>
-            <p>Copyright © 2022 7bc. All rights reserved.</p>
-          </div>
-          <div className={footer.payProviders}>
-            <Image
-              src="/brand-logo.png"
-              layout="fixed"
-              width={400}
-              height={32}
-            />
+        <div className={footer.holder}>
+          <div className={footer.linksHolder}>
+            <div className={footer.linksC}>
+              <h2>Policy</h2>
+              <p>Distance And Sales</p>
+              <p>Privacy And Policy</p>
+            </div>
+            <div className={footer.linksC}>
+              <h2>Programs</h2>
+              <p>12 Week</p>
+              <p>Movie Star Body</p>
+              <p>Diet Mastery</p>
+            </div>
+            <div className={footer.linksC}>
+              <h2>Coporate</h2>
+              <p>About Us</p>
+              <p>Contact</p>
+            </div>
           </div>
           <div className={footer.social}>
             <div className={footer.IconHolder}>
@@ -58,6 +46,15 @@ const Footer = ({ children }: Props) => {
             <div className={footer.IconHolder}>
               <FontAwesomeIcon icon={faWhatsapp} />
             </div>
+          </div>
+        </div>
+        <div className={footer.container}>
+          <div className={footer.copy}>
+            <h2>S B</h2>
+            <p>Copyright © 2022 7bc. All rights reserved.</p>
+          </div>
+          <div className={footer.payProviders}>
+            <Image src="/pay.svg" layout="fixed" width={400} height={32} />
           </div>
         </div>
       </div>

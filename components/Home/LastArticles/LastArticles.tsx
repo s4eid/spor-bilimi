@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { articleItems } from "../../../data/articles.data";
 import Article from "./Article/Article";
@@ -12,6 +13,9 @@ const LastArticles = () => {
           <Article a={a} key={a.id} />
         ))}
       </div>
+      <Link href="/blogs">
+        <button>Read More</button>
+      </Link>
     </div>
   );
 };

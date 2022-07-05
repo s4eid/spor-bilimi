@@ -10,19 +10,29 @@
 .mainC {
   background-color: colors.$primary_blue;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-right: 40px;
+  padding-left: 40px;
   width: 100%;
-  height: 100px;
-
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-position: center;
   align-items: center;
 }
+
 .title {
   align-items: center;
-  width: 33%;
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: colors.$secondary_dark;
+  border-radius: 10px;
   font-weight: bold;
-  h2 {
-    font-size: fonts.$secondary_font_size;
+  p {
+    margin: 10px;
   }
+
   color: colors.$primary_white;
 }
 
@@ -54,5 +64,10 @@
 @media screen and (max-width: 750px) {
   .blogHolder {
     flex-direction: column;
+  }
+  .mainC {
+    flex-direction: column;
+    gap: 10px;
+    // padding: 30px;
   }
 }

@@ -5,6 +5,7 @@
 .mainContainer {
   display: flex;
   justify-content: space-around;
+  padding-left: 40px;
   align-items: center;
   background-color: colors.$primary_blue;
   color: colors.$primary_white;
@@ -16,7 +17,7 @@
 }
 .logoContainer {
   display: flex;
-  justify-content: space-around;
+  // justify-content: space-around;
   font-size: fonts.$therd_font_size;
   font-weight: bold;
   cursor: pointer;
@@ -29,7 +30,9 @@
     align-items: center;
     text-align: center;
     gap: 10px;
-    justify-content: space-around;
+    width: 100%;
+    gap: 40px;
+    justify-content: flex-start;
     li {
       list-style: none;
       cursor: pointer;
@@ -55,7 +58,7 @@
   position: absolute;
   right: 0;
   // width: 33%;
-  margin-right: 5px;
+  margin-right: 40px;
   button {
     @include btn.button(colors.$primary_white, colors.$secondary_dark);
   }

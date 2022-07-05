@@ -20,7 +20,7 @@ const Blog = ({ link, title, name, date, img }: Props) => {
         <div className={blog.profile}>
           <Image src="/person.jpg" layout="fill" />
         </div>
-        <div className={blog.author}>Saeid Noormohammad</div>
+        <div className={blog.author}>Saeid N</div>
       </div>
       <div className={blog.imageC}>
         <Image src={img} layout="fill" />

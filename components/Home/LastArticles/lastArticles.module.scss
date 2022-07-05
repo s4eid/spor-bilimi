@@ -1,4 +1,6 @@
 @use "../../../sass/fonts/fonts.module.scss";
+@use "../../../sass/components/buttons/buttons.module.scss";
+@use "../../../sass/colors/colors.module.scss";
 .mainC {
   display: flex;
   justify-content: center;
@@ -10,6 +12,10 @@
   h2 {
     font-size: fonts.$secondary_font_size;
     margin-bottom: 40px;
+  }
+  button {
+    @include buttons.button(colors.$primary_white, colors.$primary_blue);
+    margin-top: 30px;
   }
 }
 .articleHolder {

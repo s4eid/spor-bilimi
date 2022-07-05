@@ -3,95 +3,127 @@
 $width: 33%;
 .mainContainer {
   margin-top: auto;
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgb(0, 147, 245) 0px 3px 6px, rgb(0, 174, 255) 0px 3px 6px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  background-color: colors.$secondary_white;
   align-items: center;
   //   height: 230px;
-  .linksHolder {
-    border-top: 2px solid colors.$primary_blue;
+}
+.linksHolder {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
+.holder {
+  // border-top: 1px solid colors.$primary_dark;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.linksC {
+  display: flex;
+  justify-content: flex-start;
+  width: 33%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    font-size: fonts.$secondary_font_size;
+    margin-top: 5px;
+    color: colors.$secondary_dark;
+  }
+  p {
+    margin: 5px;
+    color: colors.$primary_dark;
+  }
+}
+.container {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  align-items: center;
+  // background-color: colors.$secondary_dark;
+  // background-color: colors.$primary_blue;
+
+  // margin-top: 10px;
+}
+.copy {
+  width: $width;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: colors.$primary_dark;
+}
+.payProviders {
+  width: $width;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  img {
+    object-fit: contain;
+  }
+}
+.social {
+  // width: $width;
+  // padding-left: 10px;
+  padding: 10px;
+  // padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  .IconHolder {
+    border: 1px solid colors.$therd_dark;
+    width: 50px;
+    height: 50px;
+    color: colors.$secondary_dark;
     display: flex;
-    width: 100%;
     justify-content: space-around;
     align-items: center;
-    .linksC {
-      display: flex;
-      justify-content: flex-start;
-      width: 33%;
-      height: 100%;
-      align-items: center;
-      flex-direction: column;
-      h2 {
-        font-size: fonts.$secondary_font_size;
-        color: colors.$secondary_dark;
-      }
-      p {
-        margin: 5px;
-        color: colors.$therd_dark;
-      }
-    }
-  }
-  .container {
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    width: 100%;
-    align-items: center;
-    background-color: colors.$secondary_dark;
-    margin-top: 10px;
-  }
-  .copy {
-    width: $width;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    color: colors.$primary_white;
-  }
-  .payProviders {
-    width: $width;
-    display: flex;
-    justify-content: space-around;
-    position: relative;
-    img {
-      object-fit: contain;
-    }
-  }
-  .social {
-    width: $width;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    .IconHolder {
-      background-color: colors.$primary_white;
-      color: colors.$secondary_dark;
-      padding: 5px;
-      cursor: pointer;
-      border-radius: 10px;
-      font-size: fonts.$therd_font_size;
-    }
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: fonts.$therd_font_size;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .container {
     flex-wrap: wrap;
+    flex-direction: column-reverse;
     gap: 30px;
-    .copy {
-      width: 100%;
-      justify-content: center;
-      gap: 0px;
-    }
-    .payProviders {
-      width: 100%;
-    }
-    .social {
-      width: 100%;
-    }
   }
+  .copy {
+    width: 100%;
+    justify-content: center;
+    gap: 0px;
+  }
+  .payProviders {
+    margin-top: 15px;
+    width: 100%;
+  }
+  // .social {
+  //   width: 100%;
+  // }
 }
 
+@media screen and (max-width: 750px) {
+  .holder {
+    flex-direction: column;
+  }
+  .social {
+    flex-direction: row;
+  }
+}
 @media screen and (max-width: 550px) {
   .linksHolder {
     flex-wrap: wrap;

@@ -1,0 +1,32 @@
+@use "../../../sass/colors/colors.module.scss";
+@use "../../../sass/components/titles/titles.module.scss";
+@use "../../../sass/fonts/fonts.module.scss";
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  gap: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // border: 1px solid colors.$primary_dark;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.searchC {
+  // width: 50%;
+  input {
+    width: 245px;
+    border: none;
+    outline: none;
+    position: relative;
+    color: colors.$primary_dark;
+    // border: 1px solid transparent;
+    // border-radius: 4px;
+    // margin: 10px;
+    height: 20px;
+    font-size: 16px;
+  }
+}

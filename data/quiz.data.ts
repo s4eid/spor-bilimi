@@ -51,3 +51,26 @@ export const quizDataBodyType = [
     value: "endomorph",
   },
 ];
+
+export const quizDataProblems = [
+  {
+    img: "/quiz/weak/arms.webp",
+    name: "Slim Arms",
+    value: "arm",
+  },
+  {
+    img: "/quiz/weak/chest.webp",
+    name: "Weak Chest",
+    value: "chest",
+  },
+  {
+    img: "/quiz/weak/legs.webp",
+    name: "slim Legs",
+    value: "legs",
+  },
+  {
+    img: "/quiz/weak/tummy.webp",
+    name: "weak Tummy",
+    value: "tummy",
+  },
+];

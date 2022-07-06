@@ -1,11 +1,12 @@
 @use "../../sass/components/titles/titles.module.scss";
 @use "../../sass/colors/colors.module.scss";
+@use "../../sass/components/buttons/buttons.module.scss";
 .mainContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
   background: rgb(0, 129, 239);
   background: linear-gradient(
     100deg,
@@ -20,11 +21,20 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  position: relative;
   width: 100%;
   h2 {
     color: colors.$primary_white;
+    text-align: center;
   }
   gap: 10px;
+  button {
+    @include buttons.button(colors.$primary_dark, colors.$primary_white);
+    position: fixed;
+    bottom: 20px;
+    border: 2px solid colors.$primary_dark;
+    margin-top: 20px;
+  }
 }
 .holder {
   display: flex;
@@ -32,6 +42,7 @@
   align-items: center;
   width: 400px;
   background-color: colors.$secondary_dark;
+  // height: 168px;
   border-radius: 10px;
   font-weight: bold;
   color: colors.$primary_white;
@@ -40,8 +51,29 @@
   input {
     display: none;
   }
+
   &:hover {
     background-color: colors.$therd_dark;
+  }
+}
+.holderActive {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  background-color: colors.$secondary_white;
+  // height: 168px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: colors.$primary_dark;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  input {
+    // display: none;
+  }
+
+  &:hover {
+    // background-color: colors.$secondary_dark;
   }
 }
 .imageHolder {
@@ -56,6 +88,9 @@
 
 @media screen and (max-width: 420px) {
   .holder {
+    width: 90%;
+  }
+  .holderActive {
     width: 90%;
   }
 }

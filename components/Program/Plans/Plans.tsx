@@ -2,6 +2,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import plans from "./plans.module.scss";
+import { useRouter } from "next/router";
 
 interface Props {
   name: string;
@@ -22,6 +23,7 @@ const Plans = ({
   option_4,
   option_5,
 }: Props) => {
+  const router = useRouter();
   return (
     <>
       <div className={plans.title}>
@@ -54,7 +56,7 @@ const Plans = ({
         </div>
       </div>
       <div className={plans.enroll}>
-        <button>Enroll</button>
+        <button onClick={() => router.push("/quiz")}>Enroll</button>
       </div>
     </>
   );

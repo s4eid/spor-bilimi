@@ -16,6 +16,7 @@
   display: flex;
   width: 100%;
   justify-content: flex-start;
+  cursor: pointer;
   align-items: center;
 }
 .barC {
@@ -34,6 +35,7 @@
 .back {
   position: absolute;
   left: 0px;
+  margin-bottom: 10px;
   cursor: pointer;
   font-size: fonts.$secondary_font_size;
 }

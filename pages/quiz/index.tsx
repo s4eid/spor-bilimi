@@ -3,9 +3,16 @@ import QuizMain from "../../layouts/Quiz/QuizMain/QuizMain";
 import QuizNav from "../../layouts/Quiz/QuizNav/QuizNav";
 import { NextPageWithLayout } from "../_app";
 import QuizPage from "../../components/Quiz/QuizPage";
+import { quizDataGoal } from "../../data/quiz.data";
 
 const Quiz: NextPageWithLayout = () => {
-  return <QuizPage />;
+  return (
+    <QuizPage
+      nextPath="target"
+      question="What Is Your Goal?"
+      quizData={quizDataGoal}
+    />
+  );
 };
 Quiz.getLayout = function getLayout(page: ReactElement) {
   return (

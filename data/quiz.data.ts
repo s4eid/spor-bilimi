@@ -1,17 +1,53 @@
 export const quizDataGoal = [
   {
-    img: "/body_slim.webp",
+    img: "/quiz/goal/SLIM_SHREDDED_BODY.webp",
     name: "Lose Weight",
     value: "lose_weight",
   },
   {
-    img: "/body_slim_sheredded.webp",
+    img: "/quiz/goal/BEACH_BODY.webp",
     name: "Get Sheredded",
     value: "get_sheredded",
   },
   {
-    img: "/body_hero.webp",
+    img: "/quiz/goal/HERO.webp",
     name: "Gain Muscle",
     value: "gain_muscle",
+  },
+];
+
+export const quizDataTarget = [
+  {
+    img: "/quiz/target/ATHLETE.webp",
+    name: "Athlete",
+    value: "athlete",
+  },
+  {
+    img: "/quiz/target/HERO.webp",
+    name: "Hero",
+    value: "hero",
+  },
+  {
+    img: "/quiz/target/BODYBUILDER.webp",
+    name: "Bodybuilder",
+    value: "bodybuilder",
+  },
+];
+
+export const quizDataBodyType = [
+  {
+    img: "/quiz/bodyType/SLIM_BODY.webp",
+    name: "Ectomorph",
+    value: "ectomorph",
+  },
+  {
+    img: "/quiz/bodyType/NORMAL_BODY.webp",
+    name: "Mesomorph",
+    value: "mesomorph",
+  },
+  {
+    img: "/quiz/bodyType/FAT_BODY.webp",
+    name: "Endomorph",
+    value: "endomorph",
   },
 ];

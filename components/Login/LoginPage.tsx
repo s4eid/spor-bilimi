@@ -9,7 +9,6 @@ import Link from "next/link";
 import React from "react";
 import login from "./login.module.scss";
 import LoginForm from "./LoginForm/LoginForm";
-
 const LoginPage = () => {
   return (
     <div className={login.mainC}>
@@ -17,7 +16,8 @@ const LoginPage = () => {
       <Link href="/">
         <div className={login.back}>
           <FontAwesomeIcon className={login.left} icon={faChevronLeft} />
-          <FontAwesomeIcon icon={faHouse} />
+          <p>Go Back</p>
+          {/* <FontAwesomeIcon icon={faHouse} /> */}
         </div>
       </Link>
       <div className={login.header}>

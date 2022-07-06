@@ -27,7 +27,9 @@
   align-items: center;
   gap: 10px;
   justify-content: center;
-  font-size: fonts.$therd_font_size;
+  p {
+    font-size: fonts.$primary_font_size;
+  }
   cursor: pointer;
   color: colors.$primary_white;
 }

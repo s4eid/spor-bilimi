@@ -18,3 +18,12 @@
     font-size: 30px;
   }
 }
+
+@mixin sideTitle($color) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: $color;
+  margin-bottom: 20px;
+  font-size: 30px;
+}

@@ -1,0 +1,48 @@
+@use "../../../sass/colors/colors.module.scss";
+@use "../../../sass/fonts/fonts.module.scss";
+.mainC {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 40px;
+  padding-right: 40px;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  color: colors.$primary_white;
+  width: 100%;
+  z-index: 999;
+}
+.logoC {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.barC {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  p {
+    font-weight: bold;
+  }
+}
+.barHolder {
+  width: 100%;
+  background-color: colors.$primary_white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bar {
+  height: 10px;
+  background-color: colors.$primary_dark;
+}
+
+@media screen and (max-height: 650px) {
+  .mainC {
+    // display: none;
+  }
+}

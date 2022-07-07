@@ -16,6 +16,7 @@ interface Props {
 
 const Program = ({ p }: Props) => {
   const router = useRouter();
+  const [value, setValue] = React.useState<number | null>(5);
   return (
     <div className={program.programHolder}>
       <div className={program.imgC}>

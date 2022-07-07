@@ -1,0 +1,62 @@
+@use "../../../sass/components/titles/titles.module.scss";
+@use "../../../sass/colors/colors.module.scss";
+@use "../../../sass/fonts/fonts.module.scss";
+@use "../../../sass/components/buttons/buttons.module.scss";
+.mainContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  background: rgb(0, 129, 239);
+  background: linear-gradient(
+    100deg,
+    rgba(0, 129, 239, 1) 0%,
+    rgba(45, 105, 235, 1) 50%,
+    rgba(46, 51, 235, 1) 100%
+  );
+  width: 100%;
+}
+.quizContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  h2 {
+    color: colors.$primary_white;
+    text-align: center;
+  }
+  gap: 10px;
+  button {
+    @include buttons.button(colors.$primary_dark, colors.$primary_white);
+    border: 2px solid colors.$primary_dark;
+    margin-top: 20px;
+  }
+}
+.rangeC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+}
+.holder {
+  p {
+    text-align: center;
+    color: colors.$primary_white;
+    font-weight: bold;
+    font-size: fonts.$secondary_font_size;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .rangeC {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .rangeC {
+    width: 200px;
+  }
+}

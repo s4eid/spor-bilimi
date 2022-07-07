@@ -1,18 +1,35 @@
 import "../styles/globals.scss";
-import React from "react";
 import type { NextPage } from "next";
 import type { ReactElement, ReactNode } from "react";
-import type { AppProps } from "next/app";
-
+import * as React from "react";
+import Head from "next/head";
+import { AppProps } from "next/app";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import theme from "../configs/materialTheme/materialTheme";
+import createEmotionCache from "../configs/Emotion/createEmotionCache";
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
-type AppPropsWIthLayout = AppProps & {
+const clientSideEmotionCache = createEmotionCache();
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
   Component: NextPageWithLayout;
-};
-function MyApp({ Component, pageProps }: AppPropsWIthLayout) {
-  const getLayout = Component.getLayout || ((page) => page);
-  return getLayout(<Component {...pageProps} />);
 }
 
-export default MyApp;
+export default function MyApp(props: MyAppProps) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const getLayout = Component.getLayout || ((page) => page);
+  return (
+    <CacheProvider value={emotionCache}>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {getLayout(<Component {...pageProps} />)}
+      </ThemeProvider>
+    </CacheProvider>
+  );
+}

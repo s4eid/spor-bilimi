@@ -13,7 +13,7 @@
 .title {
   width: 100%;
   text-align: center;
-  @include titles.bigTitle(colors.$secondary_dark);
+  @include titles.bigTitle(colors.$primary_white);
 }
 .waveC {
   width: 100%;

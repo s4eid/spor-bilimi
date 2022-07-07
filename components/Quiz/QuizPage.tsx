@@ -28,7 +28,6 @@ const QuizPage = ({ quizData, nextPath, question }: Props) => {
       setChecked([...checked, e.target.value]);
     }
   };
-  console.log(checked);
   return (
     <div className={quiz.mainContainer}>
       <div className={quiz.quizContainer}>

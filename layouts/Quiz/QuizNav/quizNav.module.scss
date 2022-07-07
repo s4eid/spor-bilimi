@@ -8,6 +8,7 @@
   flex-direction: column;
   align-items: center;
   background-color: transparent;
+  gap: 40px;
   color: colors.$primary_white;
   width: 100%;
   z-index: 999;
@@ -35,7 +36,11 @@
 .back {
   position: absolute;
   left: 0px;
+  background-color: colors.$primary_dark;
+  bottom: 10px;
+  padding: 10px;
   margin-bottom: 10px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: fonts.$secondary_font_size;
 }

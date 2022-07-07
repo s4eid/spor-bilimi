@@ -64,7 +64,7 @@ const Slide = ({ person, direction, page, paginate }: Props) => {
       }}
     >
       <div className={slide.imageC}>
-        <Image src={person.img} layout="fill" height={400} width={400} />
+        <Image src={person.img} layout="fill" />
       </div>
       <div className={slide.textC}>
         <h2 className={slide.title}>{person.title}</h2>

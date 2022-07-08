@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import slide from "./slide.module.scss";
+import { useRouter } from "next/router";
 interface Persons {
   img: string;
   title: string;
@@ -38,6 +39,7 @@ const Slide = ({ person, direction, page, paginate }: Props) => {
       };
     },
   };
+  const router = useRouter();
   return (
     <motion.div
       className={slide.childs}
@@ -69,7 +71,7 @@ const Slide = ({ person, direction, page, paginate }: Props) => {
       <div className={slide.textC}>
         <h2 className={slide.title}>{person.title}</h2>
         <p className={slide.details}>{person.text}</p>
-        <button>Courses</button>
+        <button onClick={() => router.push("/programs")}>Courses</button>
       </div>
     </motion.div>
   );

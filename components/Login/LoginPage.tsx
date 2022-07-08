@@ -1,10 +1,10 @@
 import {
   faBrain,
   faChevronLeft,
-  faHouse,
   faPerson,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Therd from "./Therd/Therd";
 import Link from "next/link";
 import React from "react";
 import login from "./login.module.scss";
@@ -12,7 +12,10 @@ import LoginForm from "./LoginForm/LoginForm";
 const LoginPage = () => {
   return (
     <div className={login.mainC}>
-      <LoginForm />
+      <div className={login.loginC}>
+        <LoginForm />
+        <Therd />
+      </div>
       <Link href="/">
         <div className={login.back}>
           <FontAwesomeIcon className={login.left} icon={faChevronLeft} />

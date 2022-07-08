@@ -14,11 +14,6 @@ export const navItems = [
     link: "/blogs",
     id: 3,
   },
-  {
-    name: "Programlar",
-    link: "/programs",
-    id: 4,
-  },
 ];
 export const navSItems = [
   {
@@ -35,11 +30,6 @@ export const navSItems = [
     name: "Blog",
     link: "/blogs",
     id: 3,
-  },
-  {
-    name: "Programlar",
-    link: "/programs",
-    id: 4,
   },
   {
     name: "Login/Register",

@@ -1,5 +1,6 @@
 @use "../../sass/colors/colors.module.scss";
 @use "../../sass/fonts/fonts.module.scss";
+@use "../../sass/components/buttons/buttons.module.scss";
 .mainC {
   display: flex;
   justify-content: space-around;
@@ -63,6 +64,11 @@
   width: 50%;
   align-items: center;
   gap: 10px;
+}
+.setMetting {
+  @include buttons.button(colors.$primary_dark, colors.$primary_white);
+  border: 2px solid colors.$primary_dark;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 1000px) {

@@ -12,10 +12,6 @@ interface Props {
 const MettingNav = ({ children }: Props) => {
   const width = 20;
   const router = useRouter();
-  // const path = "/quiz/k";
-  // const path = router.route;
-  // console.log(path.split("/"));
-  // console.log(router.route);
   return (
     <>
       <div className={mettingNav.mainC}>

@@ -5,7 +5,6 @@ import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import TextField from "@mui/material/TextField";
 import moment from "moment";
-import { MonthPicker } from "@mui/x-date-pickers/MonthPicker";
 import { CalendarPicker } from "@mui/x-date-pickers/CalendarPicker";
 import { StaticTimePicker } from "@mui/x-date-pickers";
 // import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
@@ -16,9 +15,6 @@ const MettingPage = () => {
   const [month, setMonth] = useState<string>("");
   const [day, setDay] = useState<string>("");
   const [time, setTime] = useState<string>("");
-  console.log(month);
-  console.log(day);
-  console.log(time);
   return (
     <div className={metting.mainC}>
       <div className={metting.personC}>

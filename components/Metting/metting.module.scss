@@ -1,4 +1,5 @@
 @use "../../sass/colors/colors.module.scss";
+@use "../../sass/fonts/fonts.module.scss";
 .mainC {
   display: flex;
   justify-content: space-around;
@@ -22,16 +23,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  //   background: rgba(255, 255, 255, 0.2);
-  //   border-radius: 16px;
-  //   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  //   backdrop-filter: blur(14px);
-  //   -webkit-backdrop-filter: blur(14px);
-  //   border-radius: 10px;
+  flex-direction: column;
   position: relative;
   background-color: colors.$primary_white;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
 }
 .personC {
   width: 100%;
@@ -41,6 +37,32 @@
   align-items: center;
   width: 50%;
   color: colors.$primary_white;
+}
+.dataAndBackC {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.dataC {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  font-weight: bold;
+  color: colors.$primary_blue;
+  width: 50%;
+  align-items: center;
+}
+
+.backC {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+  width: 50%;
+  align-items: center;
+  gap: 10px;
 }
 
 @media screen and (max-width: 1000px) {

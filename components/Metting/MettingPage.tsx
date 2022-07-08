@@ -5,16 +5,11 @@ import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import TextField from "@mui/material/TextField";
 import moment from "moment";
-import { CalendarPicker } from "@mui/x-date-pickers/CalendarPicker";
-import { StaticTimePicker } from "@mui/x-date-pickers";
-// import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 
 const MettingPage = () => {
   const today = moment();
   const [date, setDate] = useState<moment.Moment | any>(today);
-  const [month, setMonth] = useState<string>("");
-  const [day, setDay] = useState<string>("");
-  const [time, setTime] = useState<string>("");
   return (
     <div className={metting.mainC}>
       <div className={metting.personC}>
@@ -29,28 +24,17 @@ const MettingPage = () => {
       </div>
       <div className={metting.mettingC}>
         <LocalizationProvider dateAdapter={AdapterMoment}>
-          {!day ? (
-            <CalendarPicker
-              date={date}
-              minDate={moment()}
-              maxDate={moment().clone().endOf("year")}
-              onChange={(newDate) => {
-                setMonth(newDate?.format("M"));
-                setDay(newDate?.format("D"));
-                setDate(newDate);
-              }}
-            />
-          ) : (
-            <StaticTimePicker
-              displayStaticWrapperAs="mobile"
-              value={date}
-              onChange={(newValue) => {
-                setDate(newValue);
-                setTime(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          )}
+          <DateTimePicker
+            renderInput={(props) => <TextField {...props} />}
+            label="DateTimePicker"
+            maxDate={moment().clone().endOf("year")}
+            minDate={moment()}
+            //     minTime={date}
+            value={date}
+            onChange={(newValue) => {
+              setDate(newValue);
+            }}
+          />
         </LocalizationProvider>
       </div>
     </div>

@@ -29,6 +29,7 @@
   background-color: colors.$secondary_dark;
   border-radius: 10px;
   font-weight: bold;
+  cursor: pointer;
   p {
     margin: 10px;
   }
@@ -59,6 +60,11 @@
   padding: 20px;
   padding-top: 60px;
   //   padding-botton: 60px;
+}
+.paginationC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 @media screen and (max-width: 750px) {

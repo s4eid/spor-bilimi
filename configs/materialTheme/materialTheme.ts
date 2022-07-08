@@ -6,6 +6,9 @@ const theme = createTheme({
   status: {
     danger: "#e52e3e",
   },
+  typography: {
+    fontFamily: `"Noto Sans", "Source Code Pro", sans-serif`,
+  },
   palette: {
     primary: {
       main: "#0081ef",

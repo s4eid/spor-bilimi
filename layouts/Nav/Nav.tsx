@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import nav from "./nav.module.scss";
 import { navItems, navSItems } from "../../data/nav.data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/router";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import SideBar from "./SideBar/SideBar";
 import Link from "next/link";
@@ -12,10 +13,16 @@ type Props = {
 
 const Nav = ({ children }: Props) => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
+  const router = useRouter();
+  useEffect(() => {
+    setNavOpen(false);
+  }, [router]);
   return (
     <>
       <div className={nav.mainContainer}>
-        <div className={nav.logoContainer}>S B</div>
+        <div className={nav.logoContainer} onClick={() => router.push("/")}>
+          S B
+        </div>
         <div className={nav.linksContainer}>
           <ul className={nav.linksHolder}>
             {navItems.map((n, index) => (

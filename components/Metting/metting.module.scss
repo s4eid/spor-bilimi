@@ -1,0 +1,50 @@
+@use "../../sass/colors/colors.module.scss";
+.mainC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  padding-right: 10px;
+  gap: 30px;
+  padding-left: 10px;
+  background: rgb(0, 129, 239);
+  background: linear-gradient(
+    100deg,
+    rgba(0, 129, 239, 1) 0%,
+    rgba(45, 105, 235, 1) 50%,
+    rgba(46, 51, 235, 1) 100%
+  );
+  width: 100%;
+}
+.mettingC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  //   background: rgba(255, 255, 255, 0.2);
+  //   border-radius: 16px;
+  //   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  //   backdrop-filter: blur(14px);
+  //   -webkit-backdrop-filter: blur(14px);
+  //   border-radius: 10px;
+  position: relative;
+  background-color: colors.$primary_white;
+  border-radius: 10px;
+  padding: 10px;
+}
+.personC {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  color: colors.$primary_white;
+}
+
+@media screen and (max-width: 1000px) {
+  .personC {
+    width: 90%;
+  }
+}

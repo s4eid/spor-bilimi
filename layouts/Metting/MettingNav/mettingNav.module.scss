@@ -1,0 +1,63 @@
+@use "../../../sass/colors/colors.module.scss";
+@use "../../../sass/fonts/fonts.module.scss";
+.mainC {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 40px;
+  padding-right: 40px;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  gap: 40px;
+  color: colors.$primary_white;
+  width: 100%;
+  z-index: 999;
+}
+.logoC {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  cursor: pointer;
+  align-items: center;
+}
+.barC {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+  align-items: center;
+  p {
+    font-weight: bold;
+    margin: 5px;
+  }
+}
+.back {
+  position: absolute;
+  left: 0px;
+  background-color: colors.$primary_dark;
+  bottom: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: fonts.$secondary_font_size;
+}
+.barHolder {
+  width: 100%;
+  background-color: colors.$primary_white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bar {
+  height: 10px;
+  background-color: colors.$primary_dark;
+}
+
+@media screen and (max-height: 650px) {
+  .mainC {
+    // display: none;
+  }
+}

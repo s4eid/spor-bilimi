@@ -1,6 +1,6 @@
 export const slideItems = [
   {
-    img: "/student.jpg",
+    img: "/student.png",
   },
   {
     img: "/student_2.png",
@@ -9,6 +9,6 @@ export const slideItems = [
     img: "/student_3.jpg",
   },
   {
-    img: "/student_4.jpg",
+    img: "/student_4.png",
   },
 ];

@@ -1,0 +1,69 @@
+@use "../../../sass/colors/colors.module.scss";
+@use "../../../sass/components/titles/titles.module.scss";
+@use "../../../sass/fonts/fonts.module.scss";
+@use "../../../sass/components/buttons/buttons.module.scss";
+
+@mixin holder($color, $bg) {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  align-items: center;
+  border-left: 10px solid $color;
+  color: colors.$primary_white;
+  background-color: $bg;
+  height: 100px;
+  width: 300px;
+  //   padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  span {
+    color: colors.$primary_white;
+  }
+  p {
+    font-weight: bold;
+    font-size: fonts.$secondary_font_size;
+  }
+}
+
+.mainC {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px;
+  align-items: center;
+  width: 100%;
+}
+.container {
+  width: 100%;
+}
+.title {
+  @include titles.title(colors.$primary_dark);
+}
+.plansHolder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.holderO {
+  @include holder(colors.$primary_blue, colors.$primary_dark);
+}
+.holderT {
+  @include holder(colors.$secondary_blue, colors.$therd_dark);
+}
+.holderE {
+  @include holder(colors.$therd_blue, colors.$secondary_dark);
+}
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    margin: 0px;
+  }
+  strike {
+    color: colors.$primary_blue;
+  }
+}

@@ -26,7 +26,7 @@ const MettingPage = () => {
         <LocalizationProvider dateAdapter={AdapterMoment}>
           <DateTimePicker
             renderInput={(props) => <TextField {...props} />}
-            label="DateTimePicker"
+            label="Pick A Date & Time"
             maxDate={moment().clone().endOf("year")}
             minDate={moment()}
             //     minTime={date}

@@ -5,7 +5,10 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 
-const Plan = () => {
+interface Props {
+  setProgress: (progress: number) => void;
+}
+const Plan = ({ setProgress }: Props) => {
   return (
     <div className={plan.mainC}>
       <FormControl className={plan.container}>
@@ -34,9 +37,9 @@ const Plan = () => {
               label="6 months Plan"
             />
             <div className={plan.price}>
-              <strike>
-                <p>8500 TL</p>
-              </strike>
+              {/* <strike> */}
+              <p>8500 TL</p>
+              {/* </strike> */}
               <p>7000 TL</p>
             </div>
           </label>
@@ -47,13 +50,14 @@ const Plan = () => {
               label="One Year Plan"
             />
             <div className={plan.price}>
-              <strike>
-                <p>10500 TL</p>
-              </strike>
+              {/* <strike> */}
+              <p>10500 TL</p>
+              {/* </strike> */}
               <p>9500 TL</p>
             </div>
           </label>
         </RadioGroup>
+        {/* <button onClick={() => setProgress(1)}>Choose Plan</button> */}
       </FormControl>
     </div>
   );

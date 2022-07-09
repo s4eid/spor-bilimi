@@ -6,7 +6,6 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Plan from "./Plan/Plan";
-import Button from "@mui/material/Button";
 
 const Paymentpage = () => {
   const [progress, setProgress] = useState(0);
@@ -26,10 +25,13 @@ const Paymentpage = () => {
           ))}
         </Stepper>
       </div>
-      {progress == 0 ? <Plan /> : progress == 1 ? <Address /> : <Pay />}
-      <button onClick={() => setProgress(progress + 1)}>
-        {progress == 0 ? "Select Plan" : progress == 1 ? "Add Address" : "Pay"}
-      </button>
+      {progress == 0 ? (
+        <Plan setProgress={setProgress} />
+      ) : progress == 1 ? (
+        <Address setProgress={setProgress} />
+      ) : (
+        <Pay />
+      )}
     </div>
   );
 };

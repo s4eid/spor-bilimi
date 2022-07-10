@@ -57,7 +57,9 @@ const Plan = ({ setProgress }: Props) => {
             </div>
           </label>
         </RadioGroup>
-        {/* <button onClick={() => setProgress(1)}>Choose Plan</button> */}
+        <button className={plan.planBtn} onClick={() => setProgress(1)}>
+          Choose Plan
+        </button>
       </FormControl>
     </div>
   );

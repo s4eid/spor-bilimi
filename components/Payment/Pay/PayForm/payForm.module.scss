@@ -1,6 +1,6 @@
-@use "../../../sass/colors/colors.module.scss";
-@use "../../../sass/fonts/fonts.module.scss";
-@use "../../../sass/components/buttons/buttons.module.scss";
+@use "../../../../sass/colors/colors.module.scss";
+@use "../../../../sass/fonts/fonts.module.scss";
+@use "../../../../sass/components/buttons/buttons.module.scss";
 .mainContainer {
   display: flex;
   justify-content: center;
@@ -37,8 +37,8 @@
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 400px;
-  // width: 100%;
+  gap: 10px;
+  width: 100%;
   //   height: 100%;
 }
 .field {
@@ -64,8 +64,6 @@
   margin: 10px;
   outline: none;
   position: relative;
-  border: 1px solid transparent;
-  border-radius: 4px;
   font-size: fonts.$primary_font_size;
   text-transform: lowercase;
 }
@@ -87,17 +85,22 @@
   align-items: center;
   flex-direction: column;
 }
+.holderCheck {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .errorC {
   color: colors.$primary_dark;
 }
 .error {
   color: rgb(255, 68, 68);
 }
-.loginBtn {
+.confrimBtn {
   margin-top: 20px;
   @include buttons.button(colors.$primary_white, colors.$primary_blue);
 }
-.loginBtnD {
+.confrimBtnD {
   margin-top: 20px;
   @include buttons.button(colors.$primary_white, colors.$primary_blue);
 }

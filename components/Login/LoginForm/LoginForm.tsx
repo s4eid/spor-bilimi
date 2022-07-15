@@ -58,7 +58,7 @@ const LoginForm = () => {
           {({ errors, touched, isValid, dirty }) => (
             <Form className={login.fields}>
               <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
                 size="invisible"
                 ref={reRef}
                 className={login.reCaptcha}

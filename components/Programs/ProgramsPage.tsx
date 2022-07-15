@@ -1,11 +1,15 @@
 import React from "react";
 import programs from "./programs.module.scss";
 import Filter from "./Filter/Filter";
-import { programsItem } from "../../data/programs";
 import Program from "./Program/Program";
 import Search from "../Blogs/Search/Search";
+import { Course } from "./Interfaces/programs.interface";
 
-const ProgramsPage = () => {
+interface Props {
+  courses: Course[];
+}
+
+const ProgramsPage = ({ courses }: Props) => {
   return (
     <div className={programs.container}>
       <div className={programs.mainC}>
@@ -16,7 +20,7 @@ const ProgramsPage = () => {
         <Search />
       </div>
       <div className={programs.programMainC}>
-        {programsItem.map((p, index) => (
+        {courses.map((p, index) => (
           <>
             {/* <div className={programs.programContainer} key={index}> */}
             <Program p={p} />

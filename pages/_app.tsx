@@ -9,6 +9,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../configs/materialTheme/materialTheme";
 import createEmotionCache from "../configs/Emotion/createEmotionCache";
+import { useApollo } from "../apolloConfig/apollo.config";
+import { ApolloProvider } from "@apollo/client";
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -21,15 +23,18 @@ interface MyAppProps extends AppProps {
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const getLayout = Component.getLayout || ((page) => page);
+  const client = useApollo(pageProps.initialApolloState);
   return (
-    <CacheProvider value={emotionCache}>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {getLayout(<Component {...pageProps} />)}
-      </ThemeProvider>
-    </CacheProvider>
+    <ApolloProvider client={client}>
+      <CacheProvider value={emotionCache}>
+        <Head>
+          <meta name="viewport" content="initial-scale=1, width=device-width" />
+        </Head>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {getLayout(<Component {...pageProps} />)}
+        </ThemeProvider>
+      </CacheProvider>
+    </ApolloProvider>
   );
 }

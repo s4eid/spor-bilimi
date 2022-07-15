@@ -1,10 +1,11 @@
+import { GetServerSideProps } from "next";
 import React from "react";
-import LoginPage from "../../components/Login/LoginPage";
-import { GetStaticProps, GetServerSideProps } from "next";
+import RegisterPage from "../../components/Register/RegisterPage";
 
-const Login = () => {
-  return <LoginPage />;
+const Register = () => {
+  return <RegisterPage />;
 };
+
 export const getServerSideProps: GetServerSideProps = async (context) => {
   if (context.req.cookies.refresh_token) {
     return {
@@ -18,4 +19,5 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {},
   };
 };
-export default Login;
+
+export default Register;

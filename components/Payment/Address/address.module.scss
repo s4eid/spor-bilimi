@@ -38,40 +38,14 @@
   flex-direction: column;
   align-items: center;
   width: 400px;
-  // width: 100%;
-  //   height: 100%;
 }
-.field {
-  width: 400px;
-  background-color: colors.$primary_dark;
-  outline: none;
-  position: relative;
-  color: colors.$secondary_dark;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  margin: 10px;
-  height: 40px;
-  font-size: 16px;
-}
-
-.field::placeholder {
-  text-align: center;
-}
-
 .fieldE {
   width: 400px;
-  color: colors.$secondary_dark;
   margin: 10px;
   outline: none;
   position: relative;
-  border: 1px solid transparent;
-  border-radius: 4px;
   font-size: fonts.$primary_font_size;
   text-transform: lowercase;
-}
-
-.fieldE::placeholder {
-  text-align: center;
 }
 
 .inputsContainer {
@@ -99,7 +73,7 @@
 }
 .loginBtnD {
   margin-top: 20px;
-  @include buttons.button(colors.$primary_white, colors.$primary_blue);
+  @include buttons.button(colors.$primary_white, colors.$primary_dark);
 }
 
 @media screen and (max-width: 460px) {

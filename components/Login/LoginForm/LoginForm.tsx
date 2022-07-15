@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import login from "./loginForm.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Formik, Field, Form } from "formik";
@@ -8,19 +8,26 @@ import {
   initialValues,
   loginSchema,
 } from "../../../validation/login.validation";
+import TextField from "@mui/material/TextField";
+import { LOGIN } from "../../../graphql/users/mutation/login";
+import { useMutation } from "@apollo/client";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [loginUser, { data, error }] = useMutation(LOGIN);
+  const reRef = useRef<ReCAPTCHA | any>(null);
   const router = useRouter();
   return (
     <div className={login.mainContainer}>
-      {/* {error ? (
+      {error ? (
         <div className={login.errorMessage}>
           <p>{errorMessage}</p>
         </div>
       ) : (
         <></>
-      )} */}
+      )}
       <div className={login.title}>
         <h1>Login</h1>
       </div>
@@ -29,38 +36,41 @@ const LoginForm = () => {
           initialValues={initialValues}
           validationSchema={loginSchema}
           onSubmit={async (data) => {
-            //     const token = await reRef.current.executeAsync();
-            //     reRef.current.reset();
-            //     data.email = await data.email.toLowerCase();
-            //     loginUser({
-            //       variables: {
-            //         email: data.email,
-            //         password: data.password,
-            //         token: token,
-            //       },
-            //       onError: (err) => setErrorMessage(err.message),
-            //       onCompleted: () => {
-            //         dispatch(getUserInfo());
-            //         router.push("/");
-            //       },
-            //     });
-            console.log(data);
+            const token = await reRef.current.executeAsync();
+            console.log(token);
+            reRef.current.reset();
+            data.email = data.email.toLowerCase();
+            loginUser({
+              variables: {
+                loginInput: {
+                  email: data.email,
+                  password: data.password,
+                  token: token,
+                },
+              },
+              onError: (err) => setErrorMessage(err.message),
+              onCompleted: () => {
+                router.push("/");
+              },
+            });
           }}
         >
           {({ errors, touched, isValid, dirty }) => (
             <Form className={login.fields}>
-              {/* <ReCAPTCHA
+              <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                 size="invisible"
                 ref={reRef}
                 className={login.reCaptcha}
-              /> */}
+              />
               <div className={login.inputsContainer}>
                 <div className={login.holder}>
                   <Field
+                    as={TextField}
+                    label="Email"
+                    variant="outlined"
                     type="email"
                     name="email"
-                    placeholder="Email"
                     className={login.fieldE}
                     enterKeyHint="next"
                     required
@@ -79,9 +89,11 @@ const LoginForm = () => {
               <div className={login.inputsContainer}>
                 <div className={login.holder}>
                   <Field
+                    as={TextField}
+                    label="Password"
+                    variant="outlined"
                     type={showPassword ? "text" : "password"}
-                    placeholder={"password"}
-                    className={login.field}
+                    className={login.fieldE}
                     name="password"
                     enterKeyHint="next"
                     required
@@ -125,13 +137,12 @@ const LoginForm = () => {
                       <span className={login.buttonLoading}> </span>
                     </button> */}
                 {/* )} */}
-                {/* <div
-                    type="button"
-                    onClick={() => router.push("/register")}
-                    className={login.orRegister}
-                  >
-                    Have no account?
-                  </div> */}
+                <div
+                  onClick={() => router.push("/register")}
+                  className={login.orRegister}
+                >
+                  Have no account?
+                </div>
                 {/* <div
                     type="button"
                     onClick={() => router.push("/change_password")}

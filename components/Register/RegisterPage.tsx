@@ -7,14 +7,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Therd from "./Therd/Therd";
 import Link from "next/link";
 import React from "react";
-import login from "./login.module.scss";
-import LoginForm from "./LoginForm/LoginForm";
+import login from "./register.module.scss";
+import RegisterForm from "./RegisterForm/RegisterForm";
 const LoginPage = () => {
   return (
     <div className={login.mainC}>
       <div className={login.mainContainer}>
         <div className={login.loginC}>
-          <LoginForm />
+          <RegisterForm />
           <Therd />
         </div>
         <Link href="/">

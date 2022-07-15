@@ -4,14 +4,10 @@ import Image from "next/image";
 import React from "react";
 import program from "./program.module.scss";
 import { useRouter } from "next/router";
+import { Course } from "../Interfaces/programs.interface";
 
-interface P {
-  img: string;
-  title: String;
-  text: string;
-}
 interface Props {
-  p: P;
+  p: Course;
 }
 
 const Program = ({ p }: Props) => {
@@ -20,12 +16,14 @@ const Program = ({ p }: Props) => {
   return (
     <div className={program.programHolder}>
       <div className={program.imgC}>
-        <Image src={p.img} layout="fill" />
+        <Image src={p.image} layout="fill" />
       </div>
       <div className={program.detailsC}>
-        <h2>{p.title}</h2>
-        <p>{p.text}</p>
-        <button onClick={() => router.push("/programs/1")}>Learn More</button>
+        <h2>{p.name}</h2>
+        <p>{p.title}</p>
+        <button onClick={() => router.push(`/programs/${p.course_id}`)}>
+          Learn More
+        </button>
       </div>
       <div className={program.startC}>
         <FontAwesomeIcon icon={faStar} />

@@ -14,7 +14,7 @@ const YouGet = ({ learn }: Props) => {
       </div>
       <div className={youGet.detailsC}>
         {learn.map((l, index) => (
-          <div className={youGet.detail}>
+          <div className={youGet.detail} key={index}>
             <p className={youGet.main}>{index + 1}</p>
             <p>{l}</p>
           </div>

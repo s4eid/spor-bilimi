@@ -32,8 +32,13 @@ export const navSItems = [
     id: 3,
   },
   {
+    name: "My Account",
+    link: "/account",
+    id: 4,
+  },
+  {
     name: "Login/Register",
     link: "/login",
-    id: 4,
+    id: 5,
   },
 ];

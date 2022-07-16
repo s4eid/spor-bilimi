@@ -3,6 +3,7 @@ import hw from "./hW.module.scss";
 import { hWSchema, initialValues } from "../../../validation/hW.validation";
 import { Formik, Field, Form } from "formik";
 import { useRouter } from "next/router";
+import TextField from "@mui/material/TextField";
 
 const HW = () => {
   const router = useRouter();
@@ -24,9 +25,11 @@ const HW = () => {
                 <div className={hw.inputsContainer}>
                   <div className={hw.holder}>
                     <Field
+                      as={TextField}
                       type="text"
+                      label="Height"
                       name="height"
-                      placeholder="Height"
+                      color="primary"
                       className={hw.field}
                       enterKeyHint="next"
                       required
@@ -45,9 +48,10 @@ const HW = () => {
                 <div className={hw.inputsContainer}>
                   <div className={hw.holder}>
                     <Field
+                      as={TextField}
                       type="text"
+                      label="Weight"
                       name="weight"
-                      placeholder="Weight"
                       className={hw.field}
                       enterKeyHint="next"
                       required
@@ -66,9 +70,10 @@ const HW = () => {
                 <div className={hw.inputsContainer}>
                   <div className={hw.holder}>
                     <Field
+                      as={TextField}
                       type="text"
                       name="targetWeight"
-                      placeholder="Target Weight"
+                      label="Target Weight"
                       className={hw.field}
                       enterKeyHint="next"
                       required
@@ -88,8 +93,9 @@ const HW = () => {
                   <div className={hw.holder}>
                     <Field
                       type="text"
+                      as={TextField}
                       name="age"
-                      placeholder="Age"
+                      label="Age"
                       className={hw.field}
                       enterKeyHint="done"
                       required

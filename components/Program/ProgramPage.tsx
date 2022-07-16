@@ -5,13 +5,18 @@ import By from "./By/By";
 import YouGet from "./YouGet/YouGet";
 import Plans from "./Plans/Plans";
 import { planItems } from "../../data/plans.data";
+import { Course } from "./interfaces/program.interface";
 
-const ProgramPage = () => {
+interface Props {
+  course: Course;
+}
+
+const ProgramPage = ({ course }: Props) => {
   return (
     <div className={program.mainContainer}>
-      <Header />
-      <By />
-      <YouGet />
+      <Header name={course.name} image={course.image} />
+      <By first_name={course.trainer.first_name} image={course.trainer.image} />
+      <YouGet learn={course.learn} />
       <div className={program.planC}>
         {planItems.map((plan, index) => (
           <div className={program.planHolder} key={index}>

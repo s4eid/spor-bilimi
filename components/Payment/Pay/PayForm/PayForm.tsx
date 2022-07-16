@@ -28,7 +28,6 @@ const PayForm = () => {
                   as={TextField}
                   variant="outlined"
                   label="Card Number"
-                  helperText={<ErrorMessage name="cardNumber" />}
                   id="cardNumber"
                   name="cardNumber"
                   className={paymentForm.fieldE}
@@ -50,7 +49,6 @@ const PayForm = () => {
                   as={TextField}
                   variant="outlined"
                   label="Card Owner"
-                  helperText={<ErrorMessage name="ownerName" />}
                   name="ownerName"
                   className={paymentForm.fieldE}
                   enterKeyHint="next"
@@ -74,7 +72,6 @@ const PayForm = () => {
                   label="Expire Year"
                   variant="outlined"
                   className={paymentForm.fieldE}
-                  helperText={<ErrorMessage name="year" />}
                   name="year"
                   enterKeyHint="next"
                   required
@@ -116,7 +113,6 @@ const PayForm = () => {
                   variant="outlined"
                   as={Select}
                   className={paymentForm.fieldE}
-                  helperText={<ErrorMessage name="month" />}
                   label="Month"
                   name="month"
                   enterKeyHint="next"
@@ -154,7 +150,6 @@ const PayForm = () => {
                   label={"CVV"}
                   className={paymentForm.fieldE}
                   name="cvv"
-                  helperText={<ErrorMessage name="cvv" />}
                   inputMode="numeric"
                   enterKeyHint="done"
                   required
@@ -172,7 +167,6 @@ const PayForm = () => {
                   <Field
                     as={Checkbox}
                     className={paymentForm.cbx}
-                    helperText={<ErrorMessage name="threeD" />}
                     id="cbx"
                     name="threeD"
                   />
@@ -192,7 +186,6 @@ const PayForm = () => {
                     as={Checkbox}
                     type="checkbox"
                     className={paymentForm.cbx}
-                    helperText={<ErrorMessage name="agree" />}
                     id="agree"
                     name="agree"
                     required

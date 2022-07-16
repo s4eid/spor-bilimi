@@ -10,7 +10,10 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../configs/materialTheme/materialTheme";
 import createEmotionCache from "../configs/Emotion/createEmotionCache";
 import { useApollo } from "../apolloConfig/apollo.config";
+import { createWrapper } from "next-redux-wrapper";
 import { ApolloProvider } from "@apollo/client";
+import store from "../Redux/Store/store";
+import { Provider } from "react-redux";
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -19,22 +22,29 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
   Component: NextPageWithLayout;
 }
-
-export default function MyApp(props: MyAppProps) {
+function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const getLayout = Component.getLayout || ((page) => page);
   const client = useApollo(pageProps.initialApolloState);
   return (
     <ApolloProvider client={client}>
-      <CacheProvider value={emotionCache}>
-        <Head>
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
-        </Head>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          {getLayout(<Component {...pageProps} />)}
-        </ThemeProvider>
-      </CacheProvider>
+      <Provider store={store}>
+        <CacheProvider value={emotionCache}>
+          <Head>
+            <meta
+              name="viewport"
+              content="initial-scale=1, width=device-width"
+            />
+          </Head>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            {getLayout(<Component {...pageProps} />)}
+          </ThemeProvider>
+        </CacheProvider>
+      </Provider>
     </ApolloProvider>
   );
 }
+const makeStore = () => store;
+const wrapper = createWrapper(makeStore);
+export default wrapper.withRedux(MyApp);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import register from "./registerForm.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Formik, Field, Form } from "formik";
@@ -9,19 +9,28 @@ import {
   registerSchema,
 } from "../../../validation/register.validation";
 import TextField from "@mui/material/TextField";
+import ReCAPTCHA from "react-google-recaptcha";
+import { REGISTER } from "../../../graphql/users/mutation/register";
+import { useMutation } from "@apollo/client";
+import LoadingButton from "@mui/lab/LoadingButton";
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [registerUser, { data, error, loading }] = useMutation(REGISTER);
+  console.log(loading);
   const router = useRouter();
+  const reRef = useRef<ReCAPTCHA | any>(null);
+  console.log(data);
   return (
     <div className={register.mainContainer}>
-      {/* {error ? (
-        <div className={login.errorMessage}>
+      {error ? (
+        <div className={register.errorMessage}>
           <p>{errorMessage}</p>
         </div>
       ) : (
         <></>
-      )} */}
+      )}
       <div className={register.title}>
         <h1>Register</h1>
       </div>
@@ -30,32 +39,37 @@ const RegisterForm = () => {
           initialValues={initialValues}
           validationSchema={registerSchema}
           onSubmit={async (data) => {
-            //     const token = await reRef.current.executeAsync();
-            //     reRef.current.reset();
-            //     data.email = await data.email.toLowerCase();
-            //     loginUser({
-            //       variables: {
-            //         email: data.email,
-            //         password: data.password,
-            //         token: token,
-            //       },
-            //       onError: (err) => setErrorMessage(err.message),
-            //       onCompleted: () => {
-            //         dispatch(getUserInfo());
-            //         router.push("/");
-            //       },
-            //     });
             console.log(data);
+            const token = await reRef.current.executeAsync();
+            reRef.current.reset();
+            data.email = data.email.toLowerCase();
+            data.first_name = data.first_name.toLowerCase();
+            data.last_name = data.last_name.toLowerCase();
+            registerUser({
+              variables: {
+                registerInput: {
+                  email: data.email,
+                  password: data.password,
+                  first_name: data.first_name,
+                  last_name: data.first_name,
+                  token: token,
+                },
+              },
+              onError: (err) => setErrorMessage(err.message),
+              onCompleted: () => {
+                // router.push("/");
+              },
+            });
           }}
         >
           {({ errors, touched, isValid, dirty }) => (
             <Form className={register.fields}>
-              {/* <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+              <ReCAPTCHA
+                sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
                 size="invisible"
                 ref={reRef}
-                className={login.reCaptcha}
-              /> */}
+                className={register.reCaptcha}
+              />
               <div className={register.inputsContainer}>
                 <div className={register.holder}>
                   <Field
@@ -157,19 +171,17 @@ const RegisterForm = () => {
               </div>
 
               <div className={register.loginOr}>
-                {/* {!loading ? ( */}
-                <button
+                <LoadingButton
+                  className={register.loginBtn}
+                  size="large"
                   type="submit"
+                  color="secondary"
                   disabled={!isValid && dirty}
-                  className={!isValid ? register.loginBtnD : register.loginBtn}
+                  loading={loading}
+                  variant="contained"
                 >
                   Register
-                </button>
-                {/* ) : ( */}
-                {/* <button disabled={true} className={login.button}>
-                      <span className={login.buttonLoading}> </span>
-                    </button> */}
-                {/* )} */}
+                </LoadingButton>
                 <div
                   onClick={() => router.push("/login")}
                   className={register.orRegister}

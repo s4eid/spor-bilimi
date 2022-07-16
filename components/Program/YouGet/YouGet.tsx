@@ -1,34 +1,24 @@
 import React from "react";
 import youGet from "./youGet.module.scss";
 
-const YouGet = () => {
+interface Props {
+  learn: string[];
+}
+
+const YouGet = ({ learn }: Props) => {
+  console.log(learn);
   return (
     <div className={youGet.mainC}>
       <div className={youGet.title}>
         <h2>What You Will Learn</h2>
       </div>
       <div className={youGet.detailsC}>
-        <div className={youGet.detail}>
-          <p className={youGet.main}>1</p>
-          <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page
-          </p>
-        </div>
-        <div className={youGet.detail}>
-          <p className={youGet.main}>2</p>
-          <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page
-          </p>
-        </div>
-        <div className={youGet.detail}>
-          <p className={youGet.main}>3</p>
-          <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page
-          </p>
-        </div>
+        {learn.map((l, index) => (
+          <div className={youGet.detail}>
+            <p className={youGet.main}>{index + 1}</p>
+            <p>{l}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

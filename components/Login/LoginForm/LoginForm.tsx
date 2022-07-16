@@ -12,11 +12,12 @@ import TextField from "@mui/material/TextField";
 import { LOGIN } from "../../../graphql/users/mutation/login";
 import { useMutation } from "@apollo/client";
 import ReCAPTCHA from "react-google-recaptcha";
+import LoadingButton from "@mui/lab/LoadingButton";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [loginUser, { data, error }] = useMutation(LOGIN);
+  const [loginUser, { data, error, loading }] = useMutation(LOGIN);
   const reRef = useRef<ReCAPTCHA | any>(null);
   const router = useRouter();
   return (
@@ -37,7 +38,6 @@ const LoginForm = () => {
           validationSchema={loginSchema}
           onSubmit={async (data) => {
             const token = await reRef.current.executeAsync();
-            console.log(token);
             reRef.current.reset();
             data.email = data.email.toLowerCase();
             loginUser({
@@ -124,19 +124,17 @@ const LoginForm = () => {
               </div>
 
               <div className={login.loginOr}>
-                {/* {!loading ? ( */}
-                <button
+                <LoadingButton
+                  className={login.loginBtn}
+                  size="large"
                   type="submit"
+                  color="secondary"
                   disabled={!isValid && dirty}
-                  className={!isValid ? login.loginBtnD : login.loginBtn}
+                  loading={loading}
+                  variant="contained"
                 >
                   Login
-                </button>
-                {/* ) : ( */}
-                {/* <button disabled={true} className={login.button}>
-                      <span className={login.buttonLoading}> </span>
-                    </button> */}
-                {/* )} */}
+                </LoadingButton>
                 <div
                   onClick={() => router.push("/register")}
                   className={login.orRegister}

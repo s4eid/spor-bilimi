@@ -8,7 +8,10 @@ export const GET_COURSE = gql`
       # category
       details
       learn
-      #       plans
+      plans {
+        price
+        time
+      }
       image
       trainer {
         image

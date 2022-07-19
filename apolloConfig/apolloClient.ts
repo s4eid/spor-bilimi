@@ -39,3 +39,25 @@ export default function createApolloClient() {
     }),
   });
 }
+
+const _link = createHttpLink({
+  uri: process.env.NEXT_PUBLIC_BLOG_URI,
+  // credentials: "include",
+  // headers: {
+  //   Origin: process.env.NEXT_PUBLIC_URL,
+  // },
+  // fetchOptions: {
+  //   credentials: "same-origin",
+  // },
+});
+export const blogApi = new ApolloClient({
+  credentials: "same-origin",
+  ssrMode: typeof window === "undefined",
+  link: _link,
+  cache: new InMemoryCache(),
+  // typePolicies: {
+  // products: {
+  //   keyFields: ["product_id"],
+  // },
+  // },
+});

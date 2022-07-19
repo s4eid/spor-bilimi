@@ -18,16 +18,16 @@ const ProgramPage = ({ course }: Props) => {
       <By first_name={course.trainer.first_name} image={course.trainer.image} />
       <YouGet learn={course.learn} />
       <div className={program.planC}>
-        {planItems.map((plan, index) => (
+        {course.plans.map((plan, index) => (
           <div className={program.planHolder} key={index}>
             <Plans
-              name={plan.name}
+              name={plan.time}
               price={plan.price}
-              option_1={plan.option_1}
-              option_2={plan.option_2}
-              option_3={plan.option_3}
-              option_4={plan.option_4}
-              option_5={plan.option_5}
+              // option_1={plan.option_1}
+              // option_2={plan.option_2}
+              // option_3={plan.option_3}
+              // option_4={plan.option_4}
+              // option_5={plan.option_5}
             />
           </div>
         ))}

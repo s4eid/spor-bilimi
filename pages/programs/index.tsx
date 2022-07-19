@@ -6,7 +6,7 @@ import Nav from "../../layouts/Nav/Nav";
 import { useQuery } from "@apollo/client";
 import { GET_COURSES } from "../../graphql/courses/query/getCourses";
 import { initializeApollo } from "../../apolloConfig/apollo.config";
-
+import { GetStaticProps } from "next";
 const Programs: NextPageWithLayout = () => {
   const { data, loading } = useQuery(GET_COURSES);
   return (
@@ -23,7 +23,7 @@ Programs.getLayout = function getLayout(page: ReactElement) {
 };
 export default Programs;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const client = initializeApollo();
   await client.query({
     query: GET_COURSES,
@@ -34,4 +34,4 @@ export async function getStaticProps() {
     },
     // revalidate: 100,
   };
-}
+};

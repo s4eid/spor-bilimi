@@ -18,10 +18,10 @@ export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
 const clientSideEmotionCache = createEmotionCache();
-interface MyAppProps extends AppProps {
+type MyAppProps = AppProps & {
   emotionCache?: EmotionCache;
   Component: NextPageWithLayout;
-}
+};
 function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const getLayout = Component.getLayout || ((page) => page);

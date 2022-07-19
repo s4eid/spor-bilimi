@@ -3,6 +3,7 @@ export interface Course {
   title: string;
   image: string;
   learn: string[];
+  plans: Plan[];
   details: string;
   trainer: Trainer;
 }
@@ -10,4 +11,9 @@ export interface Course {
 export interface Trainer {
   image: string;
   first_name: string;
+}
+
+export interface Plan {
+  price: string;
+  time: string;
 }

@@ -8,8 +8,13 @@ import Search from "./Search/Search";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import Filter from "./Filter/Filter";
+import { Blog as BlogT } from "./interfaces/blogs.interfaces";
 
-const BlogsPage = () => {
+interface Props {
+  blogsC: BlogT[];
+}
+
+const BlogsPage = ({ blogsC }: Props) => {
   const [filterOpen, setFilterOpen] = useState<boolean>(false);
   return (
     <div className={blogs.mainContainer}>
@@ -22,14 +27,16 @@ const BlogsPage = () => {
       </div>
       {filterOpen ? <Filter /> : <></>}
       <div className={blogs.blogsC}>
-        {articleItems_1.map((a, index) => (
+        {blogsC.map((a, index) => (
           <div className={blogs.blogHolder} key={index}>
             <Blog
               title={a.title}
-              date={a.date}
-              name={a.name}
-              img={a.img}
-              link={a.link}
+              date={a.createdAt}
+              name={a.title}
+              img={a.coverPhoto.url}
+              link={a.slug}
+              author_name={a.author.name}
+              author_avatar={a.author.avatar.url}
             />
           </div>
         ))}

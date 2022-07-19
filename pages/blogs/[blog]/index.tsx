@@ -4,7 +4,7 @@ import Nav from "../../../layouts/Nav/Nav";
 import { NextPageWithLayout } from "../../_app";
 import { blogApi } from "../../../apolloConfig/apolloClient";
 import { GET_BLOGS } from "../../../graphql/blog/query/getBlogs";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { GET_BLOG } from "../../../graphql/blog/query/getBlog";
 import { Blog as BlogT } from "../../../components/Blog/interfaces/blog.interfaces";
 import BlogPage from "../../../components/Blog/BlogPage";
@@ -22,7 +22,7 @@ Blog.getLayout = function getLayout(page: ReactElement) {
     </Nav>
   );
 };
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const data = await blogApi.query({
     query: GET_BLOGS,
   });
@@ -35,13 +35,14 @@ export async function getStaticPaths() {
     paths,
     fallback: true,
   };
-}
+};
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const blog_id = params?.blog;
   const blog = await blogApi.query({
     query: GET_BLOG,
     variables: { slug: blog_id },
   });
+  console.log(blog);
   return {
     props: {
       blog: blog.data.post,

@@ -10,7 +10,6 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 const Blogs: NextPageWithLayout = ({
   blogs,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(blogs);
   return <BlogsPage blogsC={blogs} />;
 };
 

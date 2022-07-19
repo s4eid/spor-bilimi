@@ -28,7 +28,10 @@ const BlogsPage = ({ blogsC }: Props) => {
         {blogsC.map((a, index) => (
           <div className={blogs.blogHolder} key={index}>
             <Blog
-              title={a.content.raw.children[0].children[0].text}
+              title={a.content.raw.children[0].children[0].text.substring(
+                0,
+                70
+              )}
               date={a.createdAt}
               name={a.title}
               img={a.coverPhoto.url}

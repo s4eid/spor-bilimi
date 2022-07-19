@@ -42,7 +42,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     query: GET_BLOG,
     variables: { slug: blog_id },
   });
-  console.log(blog);
   return {
     props: {
       blog: blog.data.post,

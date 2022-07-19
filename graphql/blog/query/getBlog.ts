@@ -7,6 +7,7 @@ export const GET_BLOG = gql`
       title
       slug
       createdAt
+      category
       coverPhoto {
         url
       }

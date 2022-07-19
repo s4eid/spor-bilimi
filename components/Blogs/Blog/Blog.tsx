@@ -40,7 +40,7 @@ const Blog = ({
       </div>
       <div className={blog.contentC}>
         <h2>{name}</h2>
-        <p>{title}</p>
+        <p>{title}...</p>
         <button onClick={() => router.push(`/blogs/${link}`)}>Read</button>
       </div>
     </>

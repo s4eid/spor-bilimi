@@ -15,6 +15,9 @@ export const GET_BLOGS = gql`
           url
         }
       }
+      content {
+        raw
+      }
     }
   }
 `;

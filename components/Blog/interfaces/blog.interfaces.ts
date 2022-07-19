@@ -2,6 +2,7 @@ export interface Blog {
   title: string;
   slug: string;
   createdAt: string;
+  category: string;
   coverPhoto: Avatar;
   author: Author;
   content: Content;

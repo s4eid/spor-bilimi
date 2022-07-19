@@ -4,6 +4,7 @@ import blog from "./blogPage.module.scss";
 import Image from "next/image";
 import Avatar from "@mui/material/Avatar";
 import moment from "moment";
+import Chip from "@mui/material/Chip";
 
 interface Props {
   blogC: Blog;
@@ -21,6 +22,12 @@ const BlogPage = ({ blogC }: Props) => {
         <p className={blog.date}>
           {moment(blogC.createdAt).format("MMMM D YYYY")}
         </p>
+      </div>
+      <div className={blog.categoryC}>
+        <Chip size="medium" label={blogC.category} color="primary" />
+      </div>
+      <div className={blog.title}>
+        <h2>{blogC.title}</h2>
       </div>
       <div className={blog.headerC}>
         <Image src={blogC.coverPhoto.url} layout="fill" />

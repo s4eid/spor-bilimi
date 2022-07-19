@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import blogs from "./blogs.module.scss";
-import { articleItems_1 } from "../../data/articles.data";
 import Blog from "./Blog/Blog";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import Search from "./Search/Search";
 import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
 import Filter from "./Filter/Filter";
 import { Blog as BlogT } from "./interfaces/blogs.interfaces";
 
@@ -30,7 +28,7 @@ const BlogsPage = ({ blogsC }: Props) => {
         {blogsC.map((a, index) => (
           <div className={blogs.blogHolder} key={index}>
             <Blog
-              title={a.title}
+              title={a.content.raw.children[0].children[0].text}
               date={a.createdAt}
               name={a.title}
               img={a.coverPhoto.url}

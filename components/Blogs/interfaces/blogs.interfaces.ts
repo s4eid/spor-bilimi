@@ -4,7 +4,20 @@ export interface Blog {
   createdAt: string;
   coverPhoto: Avatar;
   author: Author;
+  content: Content;
 }
+
+export interface Content {
+  __typename: string;
+  raw: Raw;
+}
+export interface Raw {
+  children: any;
+}
+// interface InRaw {
+//   type: string;
+//   children: { text: string };
+// }
 
 export interface Author {
   __typename: string;

@@ -37,7 +37,7 @@ const Nav = ({ children }: Props) => {
   };
   useEffect(() => {
     const getResult = async () => {
-      const user = await getUser("refresh_token");
+      const user = await getUser("account");
       if (user) {
         getUserInfo(user);
       }

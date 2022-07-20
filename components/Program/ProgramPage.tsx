@@ -15,7 +15,11 @@ const ProgramPage = ({ course }: Props) => {
   return (
     <div className={program.mainContainer}>
       <Header name={course.name} image={course.image} />
-      <By first_name={course.trainer.first_name} image={course.trainer.image} />
+      <By
+        first_name={course.trainer.first_name}
+        last_name={course.trainer.last_name}
+        image={course.trainer.image}
+      />
       <YouGet learn={course.learn} />
       <div className={program.planC}>
         {course.plans.map((plan, index) => (

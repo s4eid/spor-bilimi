@@ -1,13 +1,38 @@
 import React, { useState } from "react";
 import years from "./years.module.scss";
 import Slider from "@mui/material/Slider";
+import { bindActionCreators } from "redux";
+import { useDispatch } from "react-redux";
+import { actionCreators } from "../../../Redux/Actions/Quiz";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import { useRouter } from "next/router";
 
 const YearsPage = () => {
-  const [valueYears, setValueYears] = useState<number>();
+  const [valueYears, setValueYears] = useState<number>(0);
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const { addLevel } = bindActionCreators(actionCreators, dispatch);
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    router.push("/");
+  };
+
   function valuetext(value: number) {
     setValueYears(value);
     return "done";
   }
+  console.log(valueYears);
   return (
     <div className={years.mainContainer}>
       <div className={years.quizContainer}>
@@ -41,8 +66,35 @@ const YearsPage = () => {
             <p>Professional Just Need To Get Better 🥇</p>
           )}
         </div>
-        <button>Next</button>
+        <button
+          onClick={() => {
+            addLevel(valueYears);
+            handleClickOpen();
+          }}
+        >
+          Next
+        </button>
       </div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Congrats Your Program Is On Process 👏"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            We Will Check Your Information And Send You Your Special Program Our
+            Trainers Will Contact You On Whatsapp Or Your Email (Maximum It
+            Takes One Day)
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Ok</Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };

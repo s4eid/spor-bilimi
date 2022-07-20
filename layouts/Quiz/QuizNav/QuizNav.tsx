@@ -10,12 +10,22 @@ interface Props {
 }
 
 const QuizNav = ({ children }: Props) => {
-  const width = 20;
   const router = useRouter();
-  // const path = "/quiz/k";
-  // const path = router.route;
-  // console.log(path.split("/"));
-  // console.log(router.route);
+  const path = router.pathname.split("/");
+  const last = path.length - 1;
+  const lastPath = path[last];
+  const width =
+    lastPath == "quiz"
+      ? 0
+      : lastPath == "target"
+      ? 15
+      : lastPath == "bodyType"
+      ? 30
+      : lastPath == "problem"
+      ? 40
+      : lastPath == "height-weight"
+      ? 60
+      : 100;
   return (
     <>
       <div className={quizNav.mainC}>
@@ -26,7 +36,7 @@ const QuizNav = ({ children }: Props) => {
         </div>
         <div className={quizNav.barC}>
           <p>{width}%</p>
-          {width > 10 ? (
+          {width > 0 ? (
             <div onClick={() => router.back()} className={quizNav.back}>
               <FontAwesomeIcon icon={faArrowLeft} />
             </div>

@@ -1,8 +1,10 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import quiz from "./quiz.module.scss";
-import { quizDataGoal } from "../../data/quiz.data";
 import { useRouter } from "next/router";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../Redux/Actions/Quiz/index";
+import { useDispatch } from "react-redux";
 
 interface quizData {
   img: string;
@@ -18,7 +20,13 @@ interface Props {
 
 const QuizPage = ({ quizData, nextPath, question }: Props) => {
   const router = useRouter();
+  const path = router.pathname.split("/");
   const [checked, setChecked] = useState<string[]>([]);
+  const dispatch = useDispatch();
+  const { addGoal, addInterest, addBodyType, addWeak } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
   const onSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const exist = checked.find((t) => t == e.target.value);
     if (exist) {
@@ -40,7 +48,19 @@ const QuizPage = ({ quizData, nextPath, question }: Props) => {
                 htmlFor={q.value}
                 className={quiz.holder}
                 key={index}
-                onClick={() => router.push(`/quiz/${nextPath}`)}
+                onClick={() => {
+                  console.log(q.name);
+                  if (path[path.length - 1] == "quiz") {
+                    addGoal(q.value);
+                  }
+                  if (path[path.length - 1] == "target") {
+                    addInterest(q.value);
+                  }
+                  if (path[path.length - 1] == "bodyType") {
+                    addBodyType(q.value);
+                  }
+                  router.push(`/quiz/${nextPath}`);
+                }}
               >
                 <p>{q.name}</p>
                 <div className={quiz.imageHolder}>
@@ -79,7 +99,13 @@ const QuizPage = ({ quizData, nextPath, question }: Props) => {
                 />
               </label>
             ))}
-            <button onClick={() => router.push(`/quiz/${nextPath}`)}>
+            <button
+              onClick={() => {
+                console.log(checked);
+                addWeak(checked);
+                router.push(`/quiz/${nextPath}`);
+              }}
+            >
               Next
             </button>
           </>

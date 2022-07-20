@@ -4,8 +4,13 @@ import { hWSchema, initialValues } from "../../../validation/hW.validation";
 import { Formik, Field, Form } from "formik";
 import { useRouter } from "next/router";
 import TextField from "@mui/material/TextField";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../../Redux/Actions/Quiz";
 
 const HW = () => {
+  const dispatch = useDispatch();
+  const { addHeightWeight } = bindActionCreators(actionCreators, dispatch);
   const router = useRouter();
   return (
     <div className={hw.mainContainer}>
@@ -16,8 +21,13 @@ const HW = () => {
             initialValues={initialValues}
             validationSchema={hWSchema}
             onSubmit={async (data) => {
+              console.log(typeof data.weight);
+              const _weight = parseInt(data.weight);
+              const _height = parseInt(data.height);
+              const _target_weight = parseInt(data.targetWeight);
+              const _age = parseInt(data.age);
+              addHeightWeight(_height, _weight, _target_weight, _age);
               router.push("/quiz/years");
-              console.log(data);
             }}
           >
             {({ errors, touched, isValid, dirty }) => (
@@ -32,6 +42,7 @@ const HW = () => {
                       color="primary"
                       className={hw.field}
                       enterKeyHint="next"
+                      numeric
                       required
                     />
                     {errors.height && touched.height ? (
@@ -54,6 +65,7 @@ const HW = () => {
                       name="weight"
                       className={hw.field}
                       enterKeyHint="next"
+                      numeric
                       required
                     />
                     {errors.weight && touched.weight ? (
@@ -76,6 +88,7 @@ const HW = () => {
                       label="Target Weight"
                       className={hw.field}
                       enterKeyHint="next"
+                      numeric
                       required
                     />
                     {errors.targetWeight && touched.targetWeight ? (
@@ -98,6 +111,7 @@ const HW = () => {
                       label="Age"
                       className={hw.field}
                       enterKeyHint="done"
+                      numeric
                       required
                     />
                     {errors.age && touched.age ? (

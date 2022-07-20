@@ -17,7 +17,6 @@ const Program: NextPageWithLayout = () => {
   const { data, loading } = useQuery(GET_COURSE, {
     variables: { id: route },
   });
-  console.log(data);
   return (
     <>{!loading ? <ProgramPage course={data.course} /> : <p>loading</p>}</>
   );

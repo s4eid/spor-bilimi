@@ -16,6 +16,7 @@ export const GET_COURSE = gql`
       trainer {
         image
         first_name
+        last_name
       }
     }
   }

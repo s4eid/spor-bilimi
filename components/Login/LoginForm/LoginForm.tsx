@@ -13,6 +13,7 @@ import { LOGIN } from "../../../graphql/users/mutation/login";
 import { useMutation } from "@apollo/client";
 import ReCAPTCHA from "react-google-recaptcha";
 import LoadingButton from "@mui/lab/LoadingButton";
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -50,6 +51,7 @@ const LoginForm = () => {
               },
               onError: (err) => setErrorMessage(err.message),
               onCompleted: () => {
+                // Cookies.set("account",)
                 router.push("/");
               },
             });

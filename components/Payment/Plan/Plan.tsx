@@ -24,8 +24,8 @@ const Plan = ({ setProgress, plans }: Props) => {
           defaultValue="female"
           name="radio-buttons-group"
         >
-          {plans.map((p) => (
-            <label className={plan.holderO}>
+          {plans.map((p, index) => (
+            <label key={index} className={plan.holderO}>
               <FormControlLabel
                 value={p.time}
                 control={<Radio />}

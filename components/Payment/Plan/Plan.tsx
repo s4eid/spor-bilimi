@@ -4,11 +4,13 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
+import { Plan as PlanT } from "../interface/payment.interface";
 
 interface Props {
   setProgress: (progress: number) => void;
+  plans: PlanT[];
 }
-const Plan = ({ setProgress }: Props) => {
+const Plan = ({ setProgress, plans }: Props) => {
   return (
     <div className={plan.mainC}>
       <FormControl className={plan.container}>
@@ -22,40 +24,26 @@ const Plan = ({ setProgress }: Props) => {
           defaultValue="female"
           name="radio-buttons-group"
         >
-          <label className={plan.holderO}>
-            <FormControlLabel
-              value="week"
-              control={<Radio />}
-              label="One Week Plan"
-            />
-            <p>1500 TL</p>
-          </label>
-          <label className={plan.holderT}>
-            <FormControlLabel
-              value="month"
-              control={<Radio />}
-              label="6 months Plan"
-            />
-            <div className={plan.price}>
-              {/* <strike> */}
-              <p>8500 TL</p>
-              {/* </strike> */}
-              <p>7000 TL</p>
-            </div>
-          </label>
-          <label className={plan.holderE}>
-            <FormControlLabel
-              value="year"
-              control={<Radio />}
-              label="One Year Plan"
-            />
-            <div className={plan.price}>
-              {/* <strike> */}
-              <p>10500 TL</p>
-              {/* </strike> */}
-              <p>9500 TL</p>
-            </div>
-          </label>
+          {plans.map((p) => (
+            <label className={plan.holderO}>
+              <FormControlLabel
+                value={p.time}
+                control={<Radio />}
+                label={
+                  p.time == "2ho"
+                    ? "2 Hour Call"
+                    : p.time == "1ho"
+                    ? "1 Hour Call"
+                    : p.time == "1y"
+                    ? "1 Year Program"
+                    : p.time == "1m"
+                    ? "1 Month Program"
+                    : "6 Month Program"
+                }
+              />
+              <p>{p.price} TL</p>
+            </label>
+          ))}
         </RadioGroup>
         <button className={plan.planBtn} onClick={() => setProgress(1)}>
           Choose Plan

@@ -21,6 +21,7 @@ interface Props {
 const QuizPage = ({ quizData, nextPath, question }: Props) => {
   const router = useRouter();
   const path = router.pathname.split("/");
+  const programRoute = router.query.program;
   const [checked, setChecked] = useState<string[]>([]);
   const dispatch = useDispatch();
   const { addGoal, addInterest, addBodyType, addWeak } = bindActionCreators(
@@ -59,7 +60,7 @@ const QuizPage = ({ quizData, nextPath, question }: Props) => {
                   if (path[path.length - 1] == "bodyType") {
                     addBodyType(q.value);
                   }
-                  router.push(`/quiz/${nextPath}`);
+                  router.push(`/programs/${programRoute}/quiz/${nextPath}`);
                 }}
               >
                 <p>{q.name}</p>
@@ -103,7 +104,7 @@ const QuizPage = ({ quizData, nextPath, question }: Props) => {
               onClick={() => {
                 console.log(checked);
                 addWeak(checked);
-                router.push(`/quiz/${nextPath}`);
+                router.push(`/programs/${programRoute}/quiz/${nextPath}`);
               }}
             >
               Next

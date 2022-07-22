@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
-import QuizMain from "../../../layouts/Quiz/QuizMain/QuizMain";
-import QuizNav from "../../../layouts/Quiz/QuizNav/QuizNav";
-import { NextPageWithLayout } from "../../_app";
-import HW from "../../../components/Quiz/height_weight/HW";
+import QuizMain from "../../../../../layouts/Quiz/QuizMain/QuizMain";
+import QuizNav from "../../../../../layouts/Quiz/QuizNav/QuizNav";
+import { NextPageWithLayout } from "../../../../_app";
+import HW from "../../../../../components/Quiz/height_weight/HW";
 
 const HeightWeight: NextPageWithLayout = () => {
   return <HW />;

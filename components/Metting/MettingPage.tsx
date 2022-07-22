@@ -6,9 +6,12 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import TextField from "@mui/material/TextField";
 import moment from "moment";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+import { useRouter } from "next/router";
 
 const MettingPage = () => {
   const today = moment();
+  const router = useRouter();
+  const programRouter = router.query.program;
   const [date, setDate] = useState<moment.Moment | any>(today);
   return (
     <div className={metting.mainC}>
@@ -37,7 +40,14 @@ const MettingPage = () => {
           />
         </LocalizationProvider>
       </div>
-      <button className={metting.setMetting}>Set Metting</button>
+      <button
+        className={metting.setMetting}
+        onClick={() => {
+          router.push(`/programs/${programRouter}/payment`);
+        }}
+      >
+        Set Metting
+      </button>
     </div>
   );
 };

@@ -6,8 +6,14 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Plan from "./Plan/Plan";
+import { Course, Data } from "./interface/payment.interface";
+import Image from "next/image";
 
-const Paymentpage = () => {
+interface Props {
+  course: Course;
+}
+
+const Paymentpage = ({ course }: Props) => {
   const [progress, setProgress] = useState(0);
   const steps = ["Select Your Plan", "Address And Contact Infos", "Payment"];
   return (
@@ -25,8 +31,19 @@ const Paymentpage = () => {
           ))}
         </Stepper>
       </div>
+      <div className={payment.programC}>
+        <div className={payment.programHolder}>
+          <Image
+            src={course.course.image}
+            layout="fixed"
+            width={150}
+            height={100}
+          />
+          <p>{course.course.name}</p>
+        </div>
+      </div>
       {progress == 0 ? (
-        <Plan setProgress={setProgress} />
+        <Plan plans={course.course.plans} setProgress={setProgress} />
       ) : progress == 1 ? (
         <Address setProgress={setProgress} />
       ) : (

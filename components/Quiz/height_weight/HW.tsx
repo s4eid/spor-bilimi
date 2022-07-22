@@ -12,6 +12,7 @@ const HW = () => {
   const dispatch = useDispatch();
   const { addHeightWeight } = bindActionCreators(actionCreators, dispatch);
   const router = useRouter();
+  const programRoute = router.query.program;
   return (
     <div className={hw.mainContainer}>
       <div className={hw.quizContainer}>
@@ -27,7 +28,7 @@ const HW = () => {
               const _target_weight = parseInt(data.targetWeight);
               const _age = parseInt(data.age);
               addHeightWeight(_height, _weight, _target_weight, _age);
-              router.push("/quiz/years");
+              router.push(`/programs/${programRoute}/quiz/years`);
             }}
           >
             {({ errors, touched, isValid, dirty }) => (

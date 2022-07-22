@@ -2,6 +2,7 @@ export interface Course {
   name: string;
   title: string;
   image: string;
+  category: string;
   learn: string[];
   plans: Plan[];
   details: string;

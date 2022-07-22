@@ -4,35 +4,34 @@ import Slider from "@mui/material/Slider";
 import { bindActionCreators } from "redux";
 import { useDispatch } from "react-redux";
 import { actionCreators } from "../../../Redux/Actions/Quiz";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+// import Button from "@mui/material/Button";
+// import Dialog from "@mui/material/Dialog";
+// import DialogActions from "@mui/material/DialogActions";
+// import DialogContent from "@mui/material/DialogContent";
+// import DialogContentText from "@mui/material/DialogContentText";
+// import DialogTitle from "@mui/material/DialogTitle";
 import { useRouter } from "next/router";
 
 const YearsPage = () => {
   const [valueYears, setValueYears] = useState<number>(0);
   const dispatch = useDispatch();
   const router = useRouter();
+  const programRoute = router.query.program;
   const { addLevel } = bindActionCreators(actionCreators, dispatch);
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
 
-  const handleClose = () => {
-    setOpen(false);
-    router.push("/");
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
   function valuetext(value: number) {
     setValueYears(value);
     return "done";
   }
-  console.log(valueYears);
   return (
     <div className={years.mainContainer}>
       <div className={years.quizContainer}>
@@ -69,13 +68,15 @@ const YearsPage = () => {
         <button
           onClick={() => {
             addLevel(valueYears);
-            handleClickOpen();
+            router.push(`/programs/${programRoute}/payment`);
+            // router.push(`/programs/${programId}/payment`)
+            // handleClickOpen();
           }}
         >
           Next
         </button>
       </div>
-      <Dialog
+      {/* <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
@@ -94,7 +95,7 @@ const YearsPage = () => {
         <DialogActions>
           <Button onClick={handleClose}>Ok</Button>
         </DialogActions>
-      </Dialog>
+      </Dialog> */}
     </div>
   );
 };

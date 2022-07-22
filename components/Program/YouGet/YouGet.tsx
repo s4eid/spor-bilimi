@@ -6,7 +6,6 @@ interface Props {
 }
 
 const YouGet = ({ learn }: Props) => {
-  console.log(learn);
   return (
     <div className={youGet.mainC}>
       <div className={youGet.title}>
@@ -16,7 +15,7 @@ const YouGet = ({ learn }: Props) => {
         {learn.map((l, index) => (
           <div className={youGet.detail} key={index}>
             <p className={youGet.main}>{index + 1}</p>
-            <p>{l}</p>
+            <p>{l} ✅</p>
           </div>
         ))}
       </div>

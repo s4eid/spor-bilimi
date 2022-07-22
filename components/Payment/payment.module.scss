@@ -18,6 +18,36 @@
 .step {
   cursor: pointer;
 }
+.programC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 3px solid colors.$primary_blue;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.programHolder {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  p {
+    font-weight: bold;
+  }
+  img {
+    object-fit: contain;
+    border-radius: 10px;
+  }
+}
 .nextBtn {
   @include buttons.button(colors.$primary_white, colors.$primary_blue);
+}
+
+@media screen and (max-width: 450px) {
+  .programHolder {
+    flex-direction: column;
+  }
 }

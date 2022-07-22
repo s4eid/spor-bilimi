@@ -1,9 +1,9 @@
 import React, { ReactElement } from "react";
-import QuizMain from "../../../layouts/Quiz/QuizMain/QuizMain";
-import QuizNav from "../../../layouts/Quiz/QuizNav/QuizNav";
-import { NextPageWithLayout } from "../../_app";
-import QuizPage from "../../../components/Quiz/QuizPage";
-import { quizDataTarget } from "../../../data/quiz.data";
+import QuizMain from "../../../../../layouts/Quiz/QuizMain/QuizMain";
+import QuizNav from "../../../../../layouts/Quiz/QuizNav/QuizNav";
+import { NextPageWithLayout } from "../../../../_app";
+import QuizPage from "../../../../../components/Quiz/QuizPage";
+import { quizDataTarget } from "../../../../../data/quiz.data";
 
 const Target: NextPageWithLayout = () => {
   return (

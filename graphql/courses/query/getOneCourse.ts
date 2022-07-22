@@ -5,7 +5,7 @@ export const GET_COURSE = gql`
     course(id: $id) {
       title
       name
-      # category
+      category
       details
       learn
       plans {
@@ -18,6 +18,19 @@ export const GET_COURSE = gql`
         first_name
         last_name
       }
+    }
+  }
+`;
+export const GET_COURSE_PAY = gql`
+  query ($id: String!) {
+    course(id: $id) {
+      name
+      # category
+      plans {
+        price
+        time
+      }
+      image
     }
   }
 `;

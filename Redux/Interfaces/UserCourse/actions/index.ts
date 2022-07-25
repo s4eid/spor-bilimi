@@ -1,5 +1,10 @@
 import { USER_COURSE_TYPE } from "../../../Types/UserCourse/userCourse";
+import { User } from "../../User";
 import { UserAddress, UserCard, UserCourse } from "../index";
+interface AddUserUser {
+  type: USER_COURSE_TYPE.ADD_USER_USER_COURSE;
+  payload: User;
+}
 interface AddUserCourse {
   type: USER_COURSE_TYPE.ADD_PLAN_USER_COURSE;
   payload: UserCourse;
@@ -13,4 +18,8 @@ interface AddUserPayment {
   payload: UserCard;
 }
 
-export type Action = AddUserCourse | AddUserAddress | AddUserPayment;
+export type Action =
+  | AddUserCourse
+  | AddUserAddress
+  | AddUserPayment
+  | AddUserUser;

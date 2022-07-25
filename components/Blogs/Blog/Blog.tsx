@@ -24,6 +24,7 @@ const Blog = ({
   author_avatar,
 }: Props) => {
   const router = useRouter();
+  console.log("image", img);
   return (
     <>
       <div className={blog.date}>
@@ -31,12 +32,12 @@ const Blog = ({
       </div>
       <div className={blog.authorC}>
         <div className={blog.profile}>
-          <Image src={author_avatar} layout="fill" />
+          <Image src={author_avatar} alt="blog" layout="fill" />
         </div>
         <div className={blog.author}>{author_name}</div>
       </div>
       <div className={blog.imageC}>
-        <Image src={img} layout="fill" />
+        <Image src={img} layout="fill" alt="blog" />
       </div>
       <div className={blog.contentC}>
         <h2>{name}</h2>

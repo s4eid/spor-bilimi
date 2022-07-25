@@ -23,7 +23,11 @@ const Paymentpage = ({ course }: Props) => {
           {steps.map((label, index) => (
             <Step
               className={payment.step}
-              onClick={() => setProgress(index)}
+              onClick={() => {
+                if (progress > index) {
+                  setProgress(index);
+                }
+              }}
               key={label}
             >
               <StepLabel>{label}</StepLabel>

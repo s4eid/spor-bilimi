@@ -3,6 +3,7 @@ import {
   InMemoryCache,
   createHttpLink,
   from,
+  ApolloLink,
 } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 const errorLink = onError(
@@ -24,22 +25,6 @@ const link = createHttpLink({
   //   credentials: "same-origin",
   // },
 });
-
-export default function createApolloClient() {
-  return new ApolloClient({
-    credentials: "same-origin",
-    ssrMode: typeof window === "undefined",
-    link: from([errorLink, link]),
-    cache: new InMemoryCache({
-      // typePolicies: {
-      // products: {
-      //   keyFields: ["product_id"],
-      // },
-      // },
-    }),
-  });
-}
-
 const _link = createHttpLink({
   uri: process.env.NEXT_PUBLIC_BLOG_URI,
   // credentials: "include",
@@ -50,14 +35,34 @@ const _link = createHttpLink({
   //   credentials: "same-origin",
   // },
 });
-export const blogApi = new ApolloClient({
-  credentials: "same-origin",
-  ssrMode: typeof window === "undefined",
-  link: _link,
-  cache: new InMemoryCache(),
-  // typePolicies: {
-  // products: {
-  //   keyFields: ["product_id"],
-  // },
-  // },
-});
+
+export default function createApolloClient() {
+  return new ApolloClient({
+    credentials: "same-origin",
+    ssrMode: typeof window === "undefined",
+    link: ApolloLink.split(
+      (operation) => operation.getContext().clientName === "endpoint2",
+      _link, //if above
+      from([errorLink, link])
+    ),
+    cache: new InMemoryCache({
+      // typePolicies: {
+      // products: {
+      //   keyFields: ["product_id"],
+      // },
+      // },
+    }),
+  });
+}
+
+// export const blogApi = new ApolloClient({
+//   credentials: "same-origin",
+//   ssrMode: typeof window === "undefined",
+//   link: _link,
+//   cache: new InMemoryCache(),
+//   // typePolicies: {
+//   // products: {
+//   //   keyFields: ["product_id"],
+//   // },
+//   // },
+// });

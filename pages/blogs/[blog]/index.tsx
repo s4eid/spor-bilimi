@@ -2,17 +2,25 @@ import React, { ReactElement } from "react";
 import Footer from "../../../layouts/Footer/Footer";
 import Nav from "../../../layouts/Nav/Nav";
 import { NextPageWithLayout } from "../../_app";
-import { blogApi } from "../../../apolloConfig/apolloClient";
 import { GET_BLOGS } from "../../../graphql/blog/query/getBlogs";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { GET_BLOG } from "../../../graphql/blog/query/getBlog";
 import { Blog as BlogT } from "../../../components/Blog/interfaces/blog.interfaces";
 import BlogPage from "../../../components/Blog/BlogPage";
+import { initializeApollo } from "../../../apolloConfig/apollo.config";
+import { useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
 
 const Blog: NextPageWithLayout = ({
   blog,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <BlogPage blogC={blog} />;
+  const router = useRouter();
+  const blog_id = router.query.blog;
+  const { data, loading } = useQuery(GET_BLOG, {
+    variables: { slug: blog_id },
+    context: { clientName: "endpoint2" },
+  });
+  return <>{!loading ? <BlogPage blogC={data.post} /> : <p>loading</p>}</>;
 };
 
 Blog.getLayout = function getLayout(page: ReactElement) {
@@ -23,8 +31,11 @@ Blog.getLayout = function getLayout(page: ReactElement) {
   );
 };
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await blogApi.query({
+  const client = initializeApollo();
+  const data = await client.query({
     query: GET_BLOGS,
+    context: { clientName: "endpoint2" },
+    variables: { searchValue: "" },
   });
   const paths = data.data.posts.map((p: BlogT) => {
     return {
@@ -38,13 +49,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const blog_id = params?.blog;
-  const blog = await blogApi.query({
+  const client = initializeApollo();
+  await client.query({
     query: GET_BLOG,
-    variables: { slug: blog_id },
+    variables: {
+      slug: blog_id,
+    },
+    context: { clientName: "endpoint2" },
   });
   return {
     props: {
-      blog: blog.data.post,
+      // blog: blog.data.post,
+      initialApolloState: client.cache.extract(),
     },
     //     revalidate: 10,
   };

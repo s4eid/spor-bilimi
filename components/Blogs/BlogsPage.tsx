@@ -10,10 +10,22 @@ import { Blog as BlogT } from "./interfaces/blogs.interfaces";
 
 interface Props {
   blogsC: BlogT[];
+  fetchMore: any;
 }
 
-const BlogsPage = ({ blogsC }: Props) => {
+const BlogsPage = ({ blogsC, fetchMore }: Props) => {
   const [filterOpen, setFilterOpen] = useState<boolean>(false);
+  const changeBlogs = (text: string) => {
+    fetchMore({
+      variables: { searchValue: text },
+      updateQuery: (prevResult: any, { fetchMoreResult }: any) => {
+        console.log(fetchMoreResult.posts);
+        fetchMoreResult.posts = [...fetchMoreResult.posts];
+        return fetchMoreResult;
+      },
+    });
+  };
+  // const []=useQuery(GET_BLOGS_SEARCH,{variables:{searchValue:search}});
   return (
     <div className={blogs.mainContainer}>
       <div className={blogs.mainC}>
@@ -21,23 +33,23 @@ const BlogsPage = ({ blogsC }: Props) => {
           <p>Filter</p>
           <FontAwesomeIcon icon={faFilter} />
         </div>
-        <Search />
+        <Search changeBlog={changeBlogs} />
       </div>
       {filterOpen ? <Filter /> : <></>}
       <div className={blogs.blogsC}>
-        {blogsC.map((a, index) => (
+        {blogsC?.map((a, index) => (
           <div className={blogs.blogHolder} key={index}>
             <Blog
-              title={a.content.raw.children[0].children[0].text.substring(
+              title={a?.content?.raw?.children[0].children[0].text.substring(
                 0,
                 70
               )}
-              date={a.createdAt}
-              name={a.title}
-              img={a.coverPhoto.url}
-              link={a.slug}
-              author_name={a.author.name}
-              author_avatar={a.author.avatar.url}
+              date={a?.createdAt}
+              name={a?.title}
+              img={a?.coverPhoto?.url}
+              link={a?.slug}
+              author_name={a?.author?.name}
+              author_avatar={a?.author?.avatar?.url}
             />
           </div>
         ))}

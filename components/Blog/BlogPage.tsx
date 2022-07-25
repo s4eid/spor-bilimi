@@ -11,7 +11,6 @@ interface Props {
 }
 
 const BlogPage = ({ blogC }: Props) => {
-  console.log(blogC);
   return (
     <div className={blog.mainC}>
       <div className={blog.details}>

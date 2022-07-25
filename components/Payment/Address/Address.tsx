@@ -30,7 +30,9 @@ const Address = ({ setProgress }: Props) => {
             phone_number: data.phone_number,
             zip_code: data.zip_code,
           });
-          setProgress(2);
+          if (data.address) {
+            setProgress(2);
+          }
         }}
       >
         {({ errors, touched, isValid, dirty, setFieldValue }) => (

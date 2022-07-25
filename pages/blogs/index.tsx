@@ -3,14 +3,29 @@ import BlogsPage from "../../components/Blogs/BlogsPage";
 import Footer from "../../layouts/Footer/Footer";
 import Nav from "../../layouts/Nav/Nav";
 import { NextPageWithLayout } from "../_app";
-import { blogApi } from "../../apolloConfig/apolloClient";
 import { GET_BLOGS } from "../../graphql/blog/query/getBlogs";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { initializeApollo } from "../../apolloConfig/apollo.config";
+import { useQuery } from "@apollo/client";
+import { GET_BLOG } from "../../graphql/blog/query/getBlog";
 
 const Blogs: NextPageWithLayout = ({
   blogs,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <BlogsPage blogsC={blogs} />;
+  const { data, loading, fetchMore } = useQuery(GET_BLOGS, {
+    context: { clientName: "endpoint2" },
+    variables: { searchValue: "" },
+  });
+  console.log(data);
+  return (
+    <>
+      {!loading ? (
+        <BlogsPage blogsC={data.posts} fetchMore={fetchMore} />
+      ) : (
+        <p>loading</p>
+      )}
+    </>
+  );
 };
 
 Blogs.getLayout = function getLayout(page: ReactElement) {
@@ -21,12 +36,15 @@ Blogs.getLayout = function getLayout(page: ReactElement) {
   );
 };
 export const getStaticProps: GetStaticProps = async () => {
-  const blogs = await blogApi.query({
+  const client = initializeApollo();
+  await client.query({
     query: GET_BLOGS,
+    variables: { searchValue: "" },
+    context: { clientName: "endpoint2" },
   });
   return {
     props: {
-      blogs: blogs.data.posts,
+      initialApolloState: client.cache.extract(),
     },
     // revalidate: 100,
   };

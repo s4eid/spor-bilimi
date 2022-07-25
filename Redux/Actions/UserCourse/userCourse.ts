@@ -2,7 +2,19 @@ import { USER_COURSE_TYPE } from "../../Types/UserCourse/userCourse";
 import { Dispatch } from "redux";
 import { Action } from "../../Interfaces/UserCourse/actions/index";
 import { UserAddress, UserCard, UserCourse } from "../../Interfaces/UserCourse";
+import { User } from "../../Interfaces/User";
 
+export const addUserInfos =
+  (user: User) => async (dispatch: Dispatch<Action>) => {
+    try {
+      dispatch({
+        type: USER_COURSE_TYPE.ADD_USER_USER_COURSE,
+        payload: user,
+      });
+    } catch (error) {
+      // console.log(error);
+    }
+  };
 export const addCourseInfos =
   (user_course: UserCourse) => async (dispatch: Dispatch<Action>) => {
     try {

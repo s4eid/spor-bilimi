@@ -10,6 +10,7 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../configs/materialTheme/materialTheme";
 import createEmotionCache from "../configs/Emotion/createEmotionCache";
 import { useApollo } from "../apolloConfig/apollo.config";
+import { useApolloB } from "../apolloConfig/blogConfig/apolloBlog.config";
 import { createWrapper } from "next-redux-wrapper";
 import { ApolloProvider } from "@apollo/client";
 import store from "../Redux/Store/store";
@@ -26,6 +27,7 @@ function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const getLayout = Component.getLayout || ((page) => page);
   const client = useApollo(pageProps.initialApolloState);
+  const clientB = useApolloB(pageProps.initialApolloStateB);
   return (
     <ApolloProvider client={client}>
       <Provider store={store}>

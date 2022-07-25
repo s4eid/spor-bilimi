@@ -39,6 +39,8 @@ export const userCourse = (state = inisialState, action: Action) => {
       return { ...state, addressInfos: action.payload };
     case USER_COURSE_TYPE.ADD_PAYMENT_USER_COURSE:
       return { ...state, cardInfos: action.payload };
+    case USER_COURSE_TYPE.ADD_USER_USER_COURSE:
+      return { ...state, userInfos: action.payload };
     default:
       return state;
   }

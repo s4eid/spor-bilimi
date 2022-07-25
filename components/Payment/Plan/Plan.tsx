@@ -83,7 +83,9 @@ const Plan = ({
                 plan_id: planId,
               };
               addCourseInfos(userCourse);
-              setProgress(1);
+              if (planId) {
+                setProgress(1);
+              }
             }
           }}
         >

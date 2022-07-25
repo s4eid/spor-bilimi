@@ -11,7 +11,6 @@ import { UserP } from "../../../Redux/Interfaces/User";
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { initializeApollo } from "../../../apolloConfig/apollo.config";
-import { blogApi } from "../../../apolloConfig/apolloClient";
 import { GET_COURSES } from "../../../graphql/courses/query/getCourses";
 import { Course } from "../../../components/Programs/Interfaces/programs.interface";
 

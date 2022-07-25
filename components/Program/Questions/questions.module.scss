@@ -1,0 +1,13 @@
+.mainC {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 60%;
+  gap: 10px;
+}
+@media screen and (max-width: 700px) {
+  .mainC {
+    width: 95%;
+  }
+}

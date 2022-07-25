@@ -6,7 +6,7 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Plan from "./Plan/Plan";
-import { Course, Data } from "./interface/payment.interface";
+import { Course } from "./interface/payment.interface";
 import Image from "next/image";
 
 interface Props {
@@ -43,7 +43,13 @@ const Paymentpage = ({ course }: Props) => {
         </div>
       </div>
       {progress == 0 ? (
-        <Plan plans={course.course.plans} setProgress={setProgress} />
+        <Plan
+          plans={course.course.plans}
+          courseName={course.course.name}
+          courseCategory={course.course.category}
+          courseId={course.course.course_id}
+          setProgress={setProgress}
+        />
       ) : progress == 1 ? (
         <Address setProgress={setProgress} />
       ) : (

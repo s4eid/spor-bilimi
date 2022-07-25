@@ -1,7 +1,7 @@
-import { USER_TYPE } from "../../../Types/User/user";
+import { USER_COURSE_TYPE } from "../../../Types/UserCourse/userCourse";
 import { UserP } from "../index";
 interface GetUserInfo {
-  type: USER_TYPE.USER_INFO_TYPE;
+  type: USER_COURSE_TYPE.ADD_PLAN_USER_COURSE;
   payload: UserP;
 }
 

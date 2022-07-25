@@ -24,9 +24,11 @@ export const GET_COURSE = gql`
 export const GET_COURSE_PAY = gql`
   query ($id: String!) {
     course(id: $id) {
+      course_id
       name
-      # category
+      category
       plans {
+        plan_id
         price
         time
       }

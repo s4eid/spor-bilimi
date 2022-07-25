@@ -1,0 +1,14 @@
+.mainC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  width: 50%;
+  align-content: center;
+  text-align: center;
+}
+@media screen and (max-width: 700px) {
+  .mainC {
+    width: 300px;
+  }
+}

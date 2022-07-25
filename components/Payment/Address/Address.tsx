@@ -8,31 +8,43 @@ import {
 import address from "./address.module.scss";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { ErrorMessage } from "formik";
+import { actionCreators } from "../../../Redux/Actions/UserCourse/index";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
 interface Props {
   setProgress: (progress: number) => void;
 }
 const Address = ({ setProgress }: Props) => {
+  const dispatch = useDispatch();
+  const { addAddressInfos } = bindActionCreators(actionCreators, dispatch);
+
   return (
     <div className={address.mainContainer}>
       <Formik
         initialValues={initialValues}
         validationSchema={addressSchema}
         onSubmit={async (data) => {
+          addAddressInfos({
+            address: data.address,
+            city: data.city,
+            phone_number: data.phone_number,
+            zip_code: data.zip_code,
+          });
           setProgress(2);
-          console.log(data);
         }}
       >
-        {({ errors, touched, isValid, dirty }) => (
+        {({ errors, touched, isValid, dirty, setFieldValue }) => (
           <Form className={address.fields}>
             <div className={address.inputsContainer}>
               <div className={address.holder}>
                 <Autocomplete
                   disablePortal
                   id="city"
+                  onChange={(e, value) => setFieldValue("city", value)}
                   options={sehirlerItems}
                   renderInput={(params) => (
                     <Field
+                      name="city"
                       as={TextField}
                       // helperText={<ErrorMessage name="city" />}
                       {...params}
@@ -69,6 +81,28 @@ const Address = ({ setProgress }: Props) => {
                 ) : (
                   <div className={address.errorC}>
                     <p>Plaese Enter Your Address</p>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className={address.inputsContainer}>
+              <div className={address.holder}>
+                <Field
+                  as={TextField}
+                  label="Zip Code"
+                  variant="outlined"
+                  type="text"
+                  className={address.fieldE}
+                  name="zip_code"
+                  enterKeyHint="done"
+                />
+                {errors.zip_code && touched.zip_code ? (
+                  <div className={address.error}>
+                    <p>{errors.zip_code}</p>
+                  </div>
+                ) : (
+                  <div className={address.errorC}>
+                    <p>Plaese Enter Your Zip Code</p>
                   </div>
                 )}
               </div>

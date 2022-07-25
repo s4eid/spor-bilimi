@@ -9,14 +9,27 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Checkbox from "@mui/material/Checkbox";
 import TextField from "@mui/material/TextField";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../../../Redux/Actions/UserCourse/index";
 
 const PayForm = () => {
+  const dispatch = useDispatch();
+  const { addCardInfos } = bindActionCreators(actionCreators, dispatch);
   return (
     <div className={paymentForm.mainContainer}>
       <Formik
         initialValues={initialValues}
         validationSchema={paymentSchema}
         onSubmit={async (data) => {
+          addCardInfos({
+            card_number: data.cardNumber,
+            cvv: data.cvv,
+            expire_m: data.month,
+            expire_y: data.year,
+            owner: data.ownerName,
+            threeD: data.threeD,
+          });
           console.log(data);
         }}
       >

@@ -11,7 +11,9 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import Details from "./Details/Details";
 import { useRouter } from "next/router";
+import Questions from "./Questions/Questions";
 
 interface Props {
   course: Course;
@@ -42,7 +44,9 @@ const ProgramPage = ({ course }: Props) => {
         last_name={course.trainer.last_name}
         image={course.trainer.image}
       />
+      <Details details={course.details} />
       <YouGet learn={course.learn} />
+      <Questions />
       <div className={program.planC}>
         {course.category == "fitness" ? (
           <Button

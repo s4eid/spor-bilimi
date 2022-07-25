@@ -8,6 +8,9 @@ import { Course } from "./Interfaces/programs.interface";
 interface Props {
   courses: Course[];
 }
+const changeBlog = (text: string) => {
+  console.log(text);
+};
 
 const ProgramsPage = ({ courses }: Props) => {
   return (
@@ -17,7 +20,7 @@ const ProgramsPage = ({ courses }: Props) => {
           <h2>Programs</h2>
         </div> */}
         <Filter />
-        <Search />
+        <Search changeBlog={changeBlog} />
       </div>
       <div className={programs.programMainC}>
         {courses.map((p, index) => (

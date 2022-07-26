@@ -1,0 +1,23 @@
+@use "../../../../sass/fonts/fonts.module.scss";
+@use "../../../../sass/colors/colors.module.scss";
+
+.mainC {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 60%;
+  gap: 10px;
+  h2 {
+    font-size: fonts.$secondary_font_size;
+    color: colors.$primary_dark;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mainC {
+    width: 95%;
+    h2 {
+      text-align: center;
+    }
+  }
+}

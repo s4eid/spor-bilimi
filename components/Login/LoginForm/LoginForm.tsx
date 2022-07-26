@@ -51,11 +51,9 @@ const LoginForm = () => {
               },
               onError: (err) => setErrorMessage(err.message),
               onCompleted: (result) => {
-                // const email = JSON.stringify(result.email);
-                // const first_name = JSON.stringify(result.first_name);
-                // const last_name = JSON.stringify(result.last_name);
-                // const user_id = JSON.stringify(result.user_id);
-                Cookies.set("account", result.login.refresh);
+                Cookies.set("account", result.login.refresh, {
+                  expires: 1,
+                });
                 router.push("/");
               },
             });

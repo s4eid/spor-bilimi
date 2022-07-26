@@ -1,5 +1,6 @@
 @use "../../../sass/fonts/fonts.module.scss";
 @use "../../../sass/colors/colors.module.scss";
+@use "../../../sass/components/buttons/buttons.module.scss";
 
 .mainC {
   display: flex;
@@ -32,6 +33,93 @@
   img {
     object-fit: contain;
     border-radius: 10px;
+  }
+}
+
+.programHolder {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  padding: 20px;
+  align-items: center;
+  background-color: colors.$primary_dark;
+  border-radius: 10px;
+  &:nth-child(3) {
+    background-color: colors.$secondary_dark;
+    .startC {
+      color: colors.$primary_blue;
+    }
+  }
+  &:nth-child(2) {
+    background-color: colors.$therd_dark;
+    .startC {
+      color: colors.$therd_blue;
+    }
+  }
+  &:first-child {
+    .startC {
+      color: colors.$secondary_blue;
+    }
+  }
+}
+.imgC {
+  position: relative;
+  width: 30%;
+  height: 200px;
+
+  img {
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+.detailsC {
+  display: flex;
+  padding: 10px;
+  width: 70%;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: colors.$primary_white;
+  p {
+    width: 60%;
+  }
+  button {
+    @include buttons.button(colors.$primary_white, colors.$primary_blue);
+  }
+}
+.startC {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: colors.$therd_blue;
+  top: 10px;
+  right: 10px;
+}
+
+@media screen and (max-width: 1130px) {
+  .imgC {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .programHolder {
+    flex-direction: column;
+    width: 90%;
+  }
+  .imgC {
+    width: 100%;
+    img {
+      object-fit: contain;
+    }
+  }
+  .detailsC {
+    width: 100%;
+    p {
+      width: 90%;
+    }
   }
 }
 

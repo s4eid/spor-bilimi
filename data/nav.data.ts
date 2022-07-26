@@ -4,11 +4,11 @@ export const navItems = [
     link: "/",
     id: 1,
   },
-  {
-    name: "Programlar",
-    link: "/programs",
-    id: 2,
-  },
+  // {
+  //   name: "Programlar",
+  //   link: "/programs",
+  //   id: 2,
+  // },
   {
     name: "Blog",
     link: "/blogs",
@@ -21,11 +21,11 @@ export const navSItems = [
     link: "/",
     id: 1,
   },
-  {
-    name: "Programlar",
-    link: "/programs",
-    id: 2,
-  },
+  // {
+  //   name: "Programlar",
+  //   link: "/programs",
+  //   id: 2,
+  // },
   {
     name: "Blog",
     link: "/blogs",

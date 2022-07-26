@@ -1,7 +1,7 @@
 import React from "react";
 import by from "./by.module.scss";
 import Avatar from "@mui/material/Avatar";
-import { Trainer } from "../interfaces/program.interface";
+import { Trainer } from "../../interfaces/program.interface";
 
 const By = ({ first_name, image, last_name }: Trainer) => {
   return (

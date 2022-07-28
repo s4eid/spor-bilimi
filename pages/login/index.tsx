@@ -6,7 +6,7 @@ const Login = () => {
   return <LoginPage />;
 };
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  if (context.req.cookies.refresh_token) {
+  if (context.req.cookies.account) {
     return {
       redirect: {
         destination: "/",

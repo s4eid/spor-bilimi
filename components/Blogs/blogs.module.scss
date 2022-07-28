@@ -56,6 +56,7 @@
   //   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   gap: 20px;
   max-width: 850px;
+  min-width: 850px;
   position: relative;
   //   border-radius: 10px;
   padding: 20px;
@@ -68,13 +69,21 @@
   align-items: center;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .blogHolder {
+    max-width: 500px;
+    min-width: 500px;
     flex-direction: column;
   }
   .mainC {
     flex-direction: column;
     gap: 10px;
     // padding: 30px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .blogHolder {
+    max-width: 100%;
+    min-width: 100%;
   }
 }

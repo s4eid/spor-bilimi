@@ -75,9 +75,7 @@ export const addHeightWeight =
       const existData = getState().quiz;
       const existDataString = JSON.stringify(existData);
       localStorage.setItem("quiz", existDataString);
-    } catch (error) {
-      // console.log(error);
-    }
+    } catch (error) {}
   };
 export const addLevel =
   (level: number) =>

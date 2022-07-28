@@ -16,6 +16,7 @@ interface Props {
 const Paymentpage = ({ course }: Props) => {
   const [progress, setProgress] = useState(0);
   const steps = ["Select Your Plan", "Address And Contact Infos", "Payment"];
+  console.log(course);
   return (
     <div className={payment.mainC}>
       <div className={payment.progress}>

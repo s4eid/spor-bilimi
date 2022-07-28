@@ -1,0 +1,33 @@
+@use "../../../../sass/colors/colors.module.scss";
+@use "../../../../sass/fonts/fonts.module.scss";
+.mainC {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+.holder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(0, 174, 255, 0.87) 0px 5px 15px;
+  font-size: fonts.$secondary_font_size;
+  gap: 20px;
+  font-weight: bold;
+  p {
+    margin: 0px;
+  }
+}
+.line {
+  font-size: fonts.$therd_font_size;
+}
+
+@media screen and (max-width: 400px) {
+  .mainC {
+    gap: 5px;
+  }
+}

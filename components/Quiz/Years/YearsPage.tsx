@@ -68,7 +68,7 @@ const YearsPage = () => {
         <button
           onClick={() => {
             addLevel(valueYears);
-            router.push(`/programs/${programRoute}/payment`);
+            router.push(`/programs/${programRoute}/metting`);
             // router.push(`/programs/${programId}/payment`)
             // handleClickOpen();
           }}

@@ -27,14 +27,16 @@ const Blog = ({
   console.log("image", img);
   return (
     <>
-      <div className={blog.date}>
-        <p>{moment(date).format("MMMM D YYYY")}</p>
-      </div>
-      <div className={blog.authorC}>
-        <div className={blog.profile}>
-          <Image src={author_avatar} alt="blog" layout="fill" />
+      <div className={blog.authorDateHolder}>
+        <div className={blog.date}>
+          <p>{moment(date).format("MMMM D YYYY")}</p>
         </div>
-        <div className={blog.author}>{author_name}</div>
+        <div className={blog.authorC}>
+          <div className={blog.profile}>
+            <Image src={author_avatar} alt="blog" layout="fill" />
+          </div>
+          <div className={blog.author}>{author_name}</div>
+        </div>
       </div>
       <div className={blog.imageC}>
         <Image src={img} layout="fill" alt="blog" />

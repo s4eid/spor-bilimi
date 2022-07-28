@@ -1,6 +1,24 @@
 import { QUIZ_TYPE } from "../../Types/Quiz/quiz";
 import { Action } from "../../Interfaces/Quiz/actions/index";
 
+let _inisialState: any;
+if (typeof window !== "undefined") {
+  _inisialState = localStorage.getItem("quiz")
+    ? JSON.parse(localStorage.getItem("quiz") as string)
+    : {
+        goal: null,
+        interset_body: null,
+        body_type: null,
+        hW: {
+          height: null,
+          weight: null,
+          target_weight: null,
+          age: null,
+        },
+        weak: null,
+        level: null,
+      };
+}
 const inisialState = {
   goal: null,
   interset_body: null,
@@ -15,7 +33,10 @@ const inisialState = {
   level: null,
 };
 
-export const quiz = (state = inisialState, action: Action) => {
+export const quiz = (
+  state = typeof window !== "undefined" ? _inisialState : inisialState,
+  action: Action
+) => {
   switch (action.type) {
     case QUIZ_TYPE.QUIZ_GOAL:
       return {

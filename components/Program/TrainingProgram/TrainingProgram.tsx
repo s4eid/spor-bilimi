@@ -13,6 +13,9 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import trainingProgram from "./trainingProgram.module.scss";
 import { Course } from "../interfaces/program.interface";
+import Topics from "./Topics/Topics";
+import Story from "./Story/Story";
+import Training from "./Training/Training";
 
 interface Props {
   course: Course;
@@ -30,8 +33,6 @@ const TrainingProgram = ({ course }: Props) => {
     setOpen(false);
     if (course.category == "fitness") {
       router.push(`/programs/${route.program}/quiz`);
-    } else if (course.category == "mindset") {
-      router.push(`/programs/${route.program}/metting`);
     }
   };
   return (
@@ -43,54 +44,40 @@ const TrainingProgram = ({ course }: Props) => {
         image={course.trainer.image}
       />
       <Details details={course.details} />
+      <Topics />
+      <Story />
+      <Training />
       <YouGet learn={course.learn} />
       <Questions />
       <div className={trainingProgram.planC}>
-        {course.category == "fitness" ? (
-          <Button
-            onClick={handleClickOpen}
-            color="primary"
-            size="large"
-            variant="contained"
-          >
-            Enroll Now And Join Us
-          </Button>
-        ) : (
-          <Button
-            onClick={() => {
-              router.push(`/programs/${route.program}/metting`);
-            }}
-            color="primary"
-            size="large"
-            variant="contained"
-          >
-            Make A Call
-          </Button>
-        )}
-        {course.category == "fitness" ? (
-          <Dialog
-            disableScrollLock={true}
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
-          >
-            <DialogTitle id="alert-dialog-title">
-              {"Congrats Your Program Is On Process 👏"}
-            </DialogTitle>
-            <DialogContent>
-              <DialogContentText id="alert-dialog-description">
-                Wee Will Get You To A 10 min Quiz To Get You Know Better And
-                Prepar A Program For You.
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleClose}>Ok</Button>
-            </DialogActions>
-          </Dialog>
-        ) : (
-          <></>
-        )}
+        <Button
+          onClick={handleClickOpen}
+          color="primary"
+          size="large"
+          variant="contained"
+        >
+          Enroll Now And Join Us
+        </Button>
+        <Dialog
+          disableScrollLock={true}
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            {"Congrats Your Program Is On Process 👏"}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              Wee Will Get You To A 10 min Quiz To Get You Know Better And
+              Prepar A Program For You.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Ok</Button>
+          </DialogActions>
+        </Dialog>
       </div>
     </div>
   );

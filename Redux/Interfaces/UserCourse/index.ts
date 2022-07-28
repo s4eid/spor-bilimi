@@ -20,3 +20,7 @@ export interface UserCard {
   expire_m: string;
   threeD: boolean;
 }
+export interface UserCourseInfos {
+  courseInfos: UserCourse;
+  addressInfos: UserAddress;
+}

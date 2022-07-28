@@ -4,7 +4,7 @@ import {
   initialValues,
   paymentSchema,
 } from "../../../../validation/pay.validation";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Field, Form } from "formik";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Checkbox from "@mui/material/Checkbox";
@@ -12,10 +12,25 @@ import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../../../Redux/Actions/UserCourse/index";
+import { useSelector } from "react-redux";
+import { State } from "../../../../Redux/Reducers/rootReducer";
+import { useMutation } from "@apollo/client";
+import { CREATE_USER_COURSE } from "../../../../graphql/userCourse/mutation/createUserCourse";
+import { UserCourseInfos } from "../../../../Redux/Interfaces/UserCourse";
+import { Quiz } from "../../../../Redux/Interfaces/Quiz";
+import { User } from "../../../../Redux/Interfaces/User";
 
 const PayForm = () => {
   const dispatch = useDispatch();
   const { addCardInfos } = bindActionCreators(actionCreators, dispatch);
+  const [craeteUserCourse, { data }] = useMutation(CREATE_USER_COURSE);
+  const {
+    userCourse,
+    quiz,
+    user,
+  }: { userCourse: UserCourseInfos; quiz: Quiz; user: User } = useSelector(
+    (state: State) => state
+  );
   return (
     <div className={paymentForm.mainContainer}>
       <Formik
@@ -30,7 +45,27 @@ const PayForm = () => {
             owner: data.ownerName,
             threeD: data.threeD,
           });
-          console.log(data);
+          craeteUserCourse({
+            variables: {
+              createUserCourseInput: {
+                card_number: data.cardNumber,
+                cvv: data.cvv,
+                expire_m: data.month,
+                expire_y: data.year,
+                owner: data.ownerName,
+                threeD: data.threeD,
+                plan_id: userCourse.courseInfos.plan_id,
+                course_id: userCourse.courseInfos.id,
+                time: userCourse.courseInfos.time,
+                quiz: quiz,
+                address: userCourse.addressInfos.address,
+                city: userCourse.addressInfos.city,
+                zip_code: userCourse.addressInfos.zip_code,
+                phone_number: userCourse.addressInfos.phone_number,
+                user_id: user.user_id,
+              },
+            },
+          });
         }}
       >
         {({ errors, touched, isValid, dirty }) => (

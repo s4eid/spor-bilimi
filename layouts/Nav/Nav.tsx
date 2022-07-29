@@ -25,7 +25,10 @@ const Nav = ({ children }: Props) => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
   const router = useRouter();
   const dispatch = useDispatch();
-  const { getUserInfo } = bindActionCreators(actionCreators, dispatch);
+  const { getUserInfo, logoutUser } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
   const user: UserP = useSelector((state: State) => state.user);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -111,16 +114,9 @@ const Nav = ({ children }: Props) => {
                     fontSize: "14px",
                     color: "#fff",
                   }}
-                  onClick={handleClose}
-                >
-                  My account
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    fontSize: "14px",
-                    color: "#fff",
+                  onClick={() => {
+                    logoutUser(router);
                   }}
-                  onClick={handleClose}
                 >
                   Logout
                 </MenuItem>

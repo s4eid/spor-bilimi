@@ -22,3 +22,27 @@ export const GET_BLOGS = gql`
     }
   }
 `;
+
+export const GET_BLOGS_FILTER = gql`
+  query getPostsFilter($filter: String) {
+    posts(orderBy: createdAt_DESC, where: { category: $filter }) {
+      id
+      title
+      category
+      slug
+      createdAt
+      coverPhoto {
+        url
+      }
+      author {
+        name
+        avatar {
+          url
+        }
+      }
+      content {
+        html
+      }
+    }
+  }
+`;

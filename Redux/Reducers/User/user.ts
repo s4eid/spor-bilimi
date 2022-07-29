@@ -24,6 +24,8 @@ export const user = (state = inisialState, action: Action) => {
     //   };
     case USER_TYPE.USER_INFO_TYPE:
       return action.payload;
+    case USER_TYPE.USER_LOGOUT_TYPE:
+      return action.payload;
     // case USER_TYPE.USER_LOGOUT_TYPE:
     //   return action.payload;
     default:

@@ -71,7 +71,13 @@ const Slide = ({ person, direction, page, paginate }: Props) => {
       <div className={slide.textC}>
         <h2 className={slide.title}>{person.title}</h2>
         <p className={slide.details}>{person.text}</p>
-        <button onClick={() => router.push("/programs")}>Courses</button>
+        <button
+          onClick={() =>
+            router.push("/programs/1b4f3136-55e6-4b7e-aca6-8e2b73cd72d1")
+          }
+        >
+          Course
+        </button>
       </div>
     </motion.div>
   );

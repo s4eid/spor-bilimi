@@ -65,8 +65,6 @@ const Address = ({ setProgress }: Props) => {
                   </div>
                 )}
               </div>
-            </div>
-            <div className={address.inputsContainer}>
               <div className={address.holder}>
                 <Field
                   as={TextField}
@@ -108,8 +106,6 @@ const Address = ({ setProgress }: Props) => {
                   </div>
                 )}
               </div>
-            </div>
-            <div className={address.inputsContainer}>
               <div className={address.holder}>
                 <Field
                   as={TextField}
@@ -131,7 +127,6 @@ const Address = ({ setProgress }: Props) => {
                 )}
               </div>
             </div>
-
             <div className={address.loginOr}>
               {/* {!loading ? ( */}
               <button

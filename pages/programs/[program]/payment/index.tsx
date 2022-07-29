@@ -18,7 +18,6 @@ const Payment: NextPageWithLayout = () => {
   const { quiz, user }: { quiz: Quiz; user: User } = useSelector(
     (state: State) => state
   );
-  console.log(user);
   useEffect(() => {
     if (!quiz.goal) {
       router.push(`/programs/${programId}/quiz`);

@@ -16,7 +16,6 @@ const Blogs: NextPageWithLayout = ({
     context: { clientName: "endpoint2" },
     variables: { searchValue: "" },
   });
-  console.log(data);
   return (
     <>
       {!loading ? (

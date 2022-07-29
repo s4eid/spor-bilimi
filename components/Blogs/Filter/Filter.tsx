@@ -5,11 +5,27 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import filter from "./filter.module.scss";
+import { LazyQueryExecFunction, OperationVariables } from "@apollo/client";
 
-const Filter = () => {
+interface Props {
+  setFilter: React.Dispatch<React.SetStateAction<null | string>>;
+  getFilterBlogs: LazyQueryExecFunction<any, OperationVariables>;
+  _filter: string | null;
+}
+
+const Filter = ({ setFilter, getFilterBlogs, _filter }: Props) => {
   return (
     <div className={filter.mainC}>
-      <FormControl>
+      <FormControl
+        onChange={async (e: any) => {
+          if (e.target.value == "all") {
+            setFilter(null);
+            return;
+          }
+          setFilter(e.target.value);
+          await getFilterBlogs({ variables: { filter: e.target.value } });
+        }}
+      >
         <RadioGroup
           row
           aria-labelledby="demo-row-radio-buttons-group-label"

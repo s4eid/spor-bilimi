@@ -211,7 +211,7 @@ const PayForm = ({ user, quiz, metting }: Props) => {
                 )}
               </div>
             </div>
-            <div className={paymentForm.inputsContainer}>
+            {/* <div className={paymentForm.inputsContainer}>
               <div className={paymentForm.holderCheck}>
                 <div className={paymentForm.switchBox}>
                   <Field
@@ -228,7 +228,7 @@ const PayForm = ({ user, quiz, metting }: Props) => {
                   3D Secure
                 </label>
               </div>
-            </div>
+            </div> */}
             <div className={paymentForm.inputsContainer}>
               <div className={paymentForm.holderCheck}>
                 <div className={paymentForm.switchBox}>

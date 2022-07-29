@@ -43,6 +43,9 @@ const MettingPage = () => {
       <button
         className={metting.setMetting}
         onClick={() => {
+          const metting = moment(date).valueOf();
+          const _metting = JSON.stringify(metting);
+          localStorage.setItem("metting", _metting);
           router.push(`/programs/${programRouter}/payment`);
         }}
       >

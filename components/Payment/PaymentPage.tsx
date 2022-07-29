@@ -8,15 +8,20 @@ import StepLabel from "@mui/material/StepLabel";
 import Plan from "./Plan/Plan";
 import { Course } from "./interface/payment.interface";
 import Image from "next/image";
+import { User } from "../../Redux/Interfaces/User";
+import { Quiz } from "../../Redux/Interfaces/Quiz";
+import moment from "moment";
 
 interface Props {
   course: Course;
+  user: User;
+  quiz: Quiz;
+  metting: number;
 }
 
-const Paymentpage = ({ course }: Props) => {
+const Paymentpage = ({ course, quiz, user, metting }: Props) => {
   const [progress, setProgress] = useState(0);
   const steps = ["Select Your Plan", "Address And Contact Infos", "Payment"];
-  console.log(course);
   return (
     <div className={payment.mainC}>
       <div className={payment.progress}>
@@ -46,6 +51,18 @@ const Paymentpage = ({ course }: Props) => {
           />
           <p>{course.course.name}</p>
         </div>
+        <div className={payment.quizDetails}>
+          <p>Current Weight 📆</p>
+          <p>{quiz.hW.weight} 🇰🇬</p>
+        </div>
+        <div className={payment.quizDetails}>
+          <p>Target Weight 🏆</p>
+          <p>{quiz.hW.target_weight} 🇰🇬</p>
+        </div>
+        <div className={payment.quizDetails}>
+          <p>Metting Time 📅</p>
+          <p>{moment(metting).format("MMMM Do YYYY, h:mm:ss a")}</p>
+        </div>
       </div>
       {progress == 0 ? (
         <Plan
@@ -58,7 +75,7 @@ const Paymentpage = ({ course }: Props) => {
       ) : progress == 1 ? (
         <Address setProgress={setProgress} />
       ) : (
-        <Pay />
+        <Pay user={user} quiz={quiz} metting={metting} />
       )}
     </div>
   );

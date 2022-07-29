@@ -20,15 +20,17 @@ import { UserCourseInfos } from "../../../../Redux/Interfaces/UserCourse";
 import { Quiz } from "../../../../Redux/Interfaces/Quiz";
 import { User } from "../../../../Redux/Interfaces/User";
 
-const PayForm = () => {
+interface Props {
+  user: User;
+  quiz: Quiz;
+  metting: number;
+}
+
+const PayForm = ({ user, quiz, metting }: Props) => {
   const dispatch = useDispatch();
   const { addCardInfos } = bindActionCreators(actionCreators, dispatch);
   const [craeteUserCourse, { data }] = useMutation(CREATE_USER_COURSE);
-  const {
-    userCourse,
-    quiz,
-    user,
-  }: { userCourse: UserCourseInfos; quiz: Quiz; user: User } = useSelector(
+  const { userCourse }: { userCourse: UserCourseInfos } = useSelector(
     (state: State) => state
   );
   return (

@@ -2,10 +2,7 @@ export interface Quiz {
   goal: string;
   interest_body: string;
   weak: string[];
-  height: number;
-  weight: number;
-  target_weight: number;
-  age: number;
+  hW: HeightWeight;
   level: number;
 }
 export interface Goal {

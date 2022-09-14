@@ -26,9 +26,7 @@ const Footer = ({ children }: Props) => {
             </div>
             <div className={footer.linksC}>
               <h2>Programs</h2>
-              <p>12 Week</p>
-              <p>Movie Star Body</p>
-              <p>Diet Mastery</p>
+              <p>12 Week Program</p>
             </div>
             <div className={footer.linksC}>
               <h2>Coporate</h2>

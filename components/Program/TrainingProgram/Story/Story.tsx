@@ -18,10 +18,7 @@ const Story = () => {
           </p>
         </div>
         <div className={story.banner}>
-          <Image
-            src="https://res.cloudinary.com/nuzem/image/upload/v1658825534/sb/david_goggins_about_si0vk7.png"
-            layout="fill"
-          />
+          <Image src="/other.jpeg" layout="fill" />
         </div>
       </div>
     </div>

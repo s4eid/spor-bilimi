@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Questions = () => {
   return (
     <div className={quesions.mainC}>
-      <h2>Frequently Asked Questions ❔</h2>
+      <h2>SSS ❔</h2>
       <Accordion sx={{ backgroundColor: "#0081ef", color: "#fff" }}>
         <AccordionSummary
           expandIcon={
@@ -19,14 +19,16 @@ const Questions = () => {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Is this too advanced for me?</Typography>
+          <Typography>Antrenörler ile nasıl iletişim kuracağız?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Starting out it’s great to have a base level of strength, like
-            performing 10 push-ups and 5 chin ups. That said, we’ve had many
-            clients join that couldn’t perform a chin-up and after the first
-            month, managed to bang out 5.
+            Atletik performans full paket aldığınızda haftada 2 gün spor
+            psikoloğumuz ile bire bir görüntülü görüşeceksiniz. Kilo alma-verme
+            full paket aldığınızda haftada 1 gün spor psikoloğumuz ile bire bir
+            görüntülü görüşeceksiniz. Hareket ve antrenman bilimleri uzmanımız
+            ile haftanın 7 günü sınırsız bir şekilde Whatsapp üzerinden iletişim
+            sağlayabilirsiniz.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -38,17 +40,21 @@ const Questions = () => {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>What equipment do I need?</Typography>
+          <Typography>
+            Program içeriklerini ben oluşturabilecek miyim?
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Adjustable Bench, Dumbbells, Barbells, Rack & Pull Up is the minimal
-            equipment necessary – most things which one can find at their local
-            gym.
+            Tabiki. Antrenman programını hazırlamamız için göndereceğimiz test
+            protokollerini inceleyerek zayıf ve güçlü yanlarınızı analiz
+            edeceğiz. Daha sonrasında size göndereceğimiz soruları cevapladıktan
+            sonra sizin tavsiyeleriniz ve isteklerinizi dikkate alarak size özel
+            program hazırlayacağız.
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion sx={{ backgroundColor: "#0081ef", color: "#fff" }}>
+      {/* <Accordion sx={{ backgroundColor: "#0081ef", color: "#fff" }}>
         <AccordionSummary
           expandIcon={
             <FontAwesomeIcon style={{ color: "#fff" }} icon={faArrowDown} />
@@ -69,7 +75,7 @@ const Questions = () => {
             have adapted the diet to their needs.
           </Typography>
         </AccordionDetails>
-      </Accordion>
+      </Accordion> */}
     </div>
   );
 };

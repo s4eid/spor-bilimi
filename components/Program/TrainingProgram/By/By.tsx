@@ -8,11 +8,13 @@ const By = ({ first_name, image, last_name }: Trainer) => {
     <div className={by.container}>
       <div className={by.holder}>
         {/* <div className={by.profile}> */}
-        <Avatar alt="saeid noormohammad" src={image} />
+        <Avatar alt="Faeid noormohammad" src={image} />
         {/* </div> */}
-        <p>
+        {/* <p>
           By {first_name} {last_name}
-        </p>
+        </p> */}
+        <p>Furkan Aksan Ve Dr. Okan Mi̇çooğullari</p>
+        <Avatar alt="Oaeid noormohammad" src={image} />
       </div>
     </div>
   );

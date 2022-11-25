@@ -7,14 +7,14 @@ import lastArticle from "./lastArticles.module.scss";
 const LastArticles = () => {
   return (
     <div className={lastArticle.mainC}>
-      <h2>Last Articles</h2>
+      <h2>Son Makaleler</h2>
       <div className={lastArticle.articleHolder}>
         {articleItems.map((a) => (
           <Article a={a} key={a.id} />
         ))}
       </div>
       <Link href="/blogs">
-        <button>Read More</button>
+        <button>Devamını oku</button>
       </Link>
     </div>
   );

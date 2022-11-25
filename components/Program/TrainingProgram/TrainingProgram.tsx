@@ -22,6 +22,13 @@ interface Props {
 }
 const TrainingProgram = ({ course }: Props) => {
   const [open, setOpen] = React.useState(false);
+  const youGet = [
+    "Bizimle çalışmaya başladıktan sonra hayat kaliten artacak",
+    "Atletik performansın gelişecek",
+    "Fiziksel ve zihinsel olarak daha iyi hissedeceksin",
+    "Psikolojik ve mental sağlık parametrelerin gelişecek",
+    "Hayata bakış açın değişecek",
+  ];
   const router = useRouter();
   const route = router.query;
 
@@ -47,7 +54,7 @@ const TrainingProgram = ({ course }: Props) => {
       <Topics />
       <Story />
       <Training />
-      <YouGet learn={course.learn} />
+      <YouGet learn={youGet} />
       <Questions />
       <div className={trainingProgram.planC}>
         <Button
@@ -56,7 +63,7 @@ const TrainingProgram = ({ course }: Props) => {
           size="large"
           variant="contained"
         >
-          Enroll Now And Join Us
+          Bize Katıl
         </Button>
         <Dialog
           disableScrollLock={true}
@@ -66,16 +73,16 @@ const TrainingProgram = ({ course }: Props) => {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {"Congrats Your Program Is On Process 👏"}
+            {"Tebrikler Programınız İşlemde 👏"}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              Wee Will Get You To A 10 min Quiz To Get You Know Better And
-              Prepar A Program For You.
+              Sizi Daha İyi Tanımak ve Size Özel Bir Program Hazırlamak İçin 10
+              Dakikalık Bir Sınava Getireceğiz.
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Ok</Button>
+            <Button onClick={handleClose}>Tamam</Button>
           </DialogActions>
         </Dialog>
       </div>

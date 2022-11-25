@@ -1,0 +1,19 @@
+@use "../../../sass/components/buttons/buttons.module.scss";
+@use "../../../sass/colors/colors.module.scss";
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  //   flex-wrap: wrap;
+  flex-direction: column;
+}
+.choseBtn {
+  margin-top: 20px;
+  @include buttons.button(colors.$primary_white, colors.$primary_dark);
+  border-left: 10px solid colors.$primary_blue;
+  width: 400px;
+  height: 80px;
+  font-size: 16px;
+  font-weight: bold;
+}

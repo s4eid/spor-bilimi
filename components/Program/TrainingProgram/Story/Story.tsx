@@ -5,16 +5,18 @@ import story from "./story.module.scss";
 const Story = () => {
   return (
     <div className={story.mainC}>
-      <h2>Mindset You Will Get Zoom Call With Coaches 🧠</h2>
+      <h2>Zihinsel Performansine Artir 🧠</h2>
       <div className={story.holder}>
         <div className={story.textC}>
-          <h4>PUSHING THE LIMIT</h4>
+          <h4>Zihinsel Performans</h4>
           <p>
-            An accomplished endurance athlete, Goggins has completed over 60
-            ultra-marathons, triathlons, and ultra-triathlons, setting new
-            course records and regularly placing in the top five. He once held
-            the Guinness World Record for pull-ups completing 4,030 in 17 hours,
-            and he’s a sought after public speaker.
+            Doç. Dr. Okan MİÇOOĞULLARI: Zihinsel performans koçuyum. Devlet
+            üniversitesinde akademisyen olarak görev yapıyorum. Her yıl yüzlerce
+            öğretmen yetiştiriyorum. Uzmanlık alanım sporcunun psikolojik
+            becerilerini( Müsabaka ve Antrenman öncesi, sonrası psikolojik
+            destek, zihinsel dayanıklılık, motivasyon, liderlik özelliği,
+            özgüven vb.) geliştirmek. Bireysel olarak, biz bir damlayız.
+            Birlikte okyanusuz. Bu okyanusta seninle birlikte olmak istiyoruz.
           </p>
         </div>
         <div className={story.banner}>

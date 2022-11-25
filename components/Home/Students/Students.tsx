@@ -14,7 +14,7 @@ const Students = () => {
   return (
     <div className={students.studentMainContainer}>
       <div className={students.title}>
-        <h2>Students</h2>
+        <h2>Öğrenciler</h2>
       </div>
       <div className={students.studentHolder}>
         <motion.div ref={carousel} className={students.carousel}>

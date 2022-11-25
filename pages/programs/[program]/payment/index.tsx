@@ -1,8 +1,8 @@
-import { useQuery } from "@apollo/client";
+// import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import React, { ReactElement, useEffect } from "react";
 import PaymentPage from "../../../../components/Payment/PaymentPage";
-import { GET_COURSE_PAY } from "../../../../graphql/courses/query/getOneCourse";
+// import { GET_COURSE_PAY } from "../../../../graphql/courses/query/getOneCourse";
 import Footer from "../../../../layouts/Footer/Footer";
 import Nav from "../../../../layouts/Nav/Nav";
 import { useSelector } from "react-redux";
@@ -15,9 +15,7 @@ import { User } from "../../../../Redux/Interfaces/User";
 const Payment: NextPageWithLayout = () => {
   const router = useRouter();
   const programId = router.query.program;
-  const { quiz, user }: { quiz: Quiz; user: User } = useSelector(
-    (state: State) => state
-  );
+  const { quiz }: { quiz: Quiz } = useSelector((state: State) => state);
   useEffect(() => {
     if (!quiz.goal) {
       router.push(`/programs/${programId}/quiz`);
@@ -26,17 +24,22 @@ const Payment: NextPageWithLayout = () => {
   const metting =
     typeof window !== "undefined" && localStorage.getItem("metting");
   const _metting = JSON.parse(metting as string);
-  const { data, loading } = useQuery(GET_COURSE_PAY, {
-    variables: { id: programId },
-    skip: programId == undefined,
-  });
+  // const { data, loading } = useQuery(GET_COURSE_PAY, {
+  //   variables: { id: programId },
+  //   skip: programId == undefined,
+  // });
   return (
     <>
-      {!loading && programId !== undefined ? (
-        <PaymentPage quiz={quiz} user={user} course={data} metting={_metting} />
+      <PaymentPage
+        quiz={quiz}
+        // user={user}
+        //  course={data}
+        metting={_metting}
+      />
+      {/* {!loading && programId !== undefined ? (
       ) : (
         <p>loading</p>
-      )}
+      )} */}
     </>
   );
 };
@@ -48,18 +51,18 @@ Payment.getLayout = function getLayout(page: ReactElement) {
     </Nav>
   );
 };
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  if (!context.req.cookies.account) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
-  return {
-    props: {},
-  };
-};
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   if (!context.req.cookies.account) {
+//     return {
+//       redirect: {
+//         destination: "/login",
+//         permanent: false,
+//       },
+//     };
+//   }
+//   return {
+//     props: {},
+//   };
+// };
 
 export default Payment;

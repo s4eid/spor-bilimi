@@ -14,7 +14,7 @@ const Programs = ({ courses }: Props) => {
   const router = useRouter();
   return (
     <div className={programs.mainC}>
-      <h2>Main Programs</h2>
+      <h2>Ana Programlar</h2>
       <div className={programs.holderC}>
         {courses.map((p) => (
           <div key={p.course_id} className={programs.programHolder}>
@@ -22,10 +22,12 @@ const Programs = ({ courses }: Props) => {
               <Image src={p.image} layout="fill" />
             </div>
             <div className={programs.detailsC}>
-              <h2>{p.name}</h2>
+              {/* <h2>{p.name}</h2>
+              <p>{p.title}</p> */}
+              <h2>Zihinsel ve Fiziksel Programı</h2>
               <p>{p.title}</p>
               <button onClick={() => router.push(`/programs/${p.course_id}`)}>
-                Learn More
+                Araştır
               </button>
             </div>
             <div className={programs.startC}>

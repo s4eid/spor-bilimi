@@ -9,7 +9,7 @@ const YouGet = ({ learn }: Props) => {
   return (
     <div className={youGet.mainC}>
       <div className={youGet.title}>
-        <h2>What You Will Learn</h2>
+        <h2>Ne Öğreneceksin</h2>
       </div>
       <div className={youGet.detailsC}>
         {learn.map((l, index) => (

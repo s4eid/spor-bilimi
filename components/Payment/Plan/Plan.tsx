@@ -4,42 +4,46 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import { Plan as PlanT } from "../interface/payment.interface";
-import { useDispatch } from "react-redux";
-import { actionCreators } from "../../../Redux/Actions/UserCourse/index";
-import { bindActionCreators } from "redux";
+// import { Plan as PlanT } from "../interface/payment.interface";
+// import { useDispatch } from "react-redux";
+// import { actionCreators } from "../../../Redux/Actions/UserCourse/index";
+// import { bindActionCreators } from "redux";
 
 interface Props {
   setProgress: (progress: number) => void;
-  plans: PlanT[];
-  courseName: string;
-  courseCategory: string;
-  courseId: string;
+  planSelected: string;
+  setPlanSelected: (plan: string) => void;
+  // plans: PlanT[];
+  // courseName: string;
+  // courseCategory: string;
+  // courseId: string;
 }
 const Plan = ({
   setProgress,
-  plans,
-  courseName,
-  courseId,
-  courseCategory,
-}: Props) => {
+  setPlanSelected,
+}: // plans,
+// courseName,
+// courseId,
+// courseCategory,
+Props) => {
   const [planS, setPlanS] = useState<string>();
-  const [priceS, setPriceS] = useState<number>();
-  const [planId, setPlanId] = useState<string>();
-  const dispatch = useDispatch();
-  const { addCourseInfos } = bindActionCreators(actionCreators, dispatch);
+  // const [priceS, setPriceS] = useState<number>();
+  // const [planId, setPlanId] = useState<string>();
+  // const dispatch = useDispatch();
+  // const { addCourseInfos } = bindActionCreators(actionCreators, dispatch);
+  const plansS = [{ name: "Kilo Alma-Verme" }, { name: "Performans" }];
   return (
     <div className={plan.mainC}>
       <FormControl className={plan.container}>
         <div className={plan.title}>
-          <h2>Choose Your Plan</h2>
+          <h2>Paket Türü Seçin</h2>
         </div>
         <RadioGroup
           onChange={(e) => {
             setPlanS(e.target.value);
-            const price = plans.find((p) => p.time == e.target.value);
-            setPriceS(price?.price);
-            setPlanId(price?.plan_id);
+            // const price = plans.find((p) => p.time == e.target.value);
+            // setPriceS(price?.price);
+            // setPlanId(price?.plan_id);
           }}
           //   row
           className={plan.plansHolder}
@@ -47,26 +51,14 @@ const Plan = ({
           defaultValue="female"
           name="radio-buttons-group"
         >
-          {plans.map((p, index) => (
+          {plansS.map((p, index) => (
             <label key={index} className={plan.holderO}>
               <FormControlLabel
-                value={p.time}
+                value={p.name}
                 control={<Radio />}
-                label={
-                  p.time == "2ho"
-                    ? "2 Hour Call"
-                    : p.time == "1ho"
-                    ? "1 Hour Call"
-                    : p.time == "3ho"
-                    ? "3 Hour Call"
-                    : p.time == "1y"
-                    ? "1 Year Program"
-                    : p.time == "1m"
-                    ? "1 Month Program"
-                    : "6 Month Program"
-                }
+                label={p.name}
               />
-              <p>{p.price} TL</p>
+              {/* <p>{p.name} TL</p> */}
             </label>
           ))}
         </RadioGroup>
@@ -75,21 +67,21 @@ const Plan = ({
           className={plan.planBtn}
           onClick={() => {
             if (planS) {
-              let userCourse = {
-                id: courseId,
-                name: courseName,
-                price: priceS,
-                category: courseCategory,
-                plan_id: planId,
-              };
-              addCourseInfos(userCourse);
-              if (planId) {
-                setProgress(1);
-              }
+              setPlanSelected(planS);
+
+              // let userCourse = {
+              //   id: courseId,
+              //   name: courseName,
+              //   price: priceS,
+              //   category: courseCategory,
+              //   plan_id: planId,
+              // };
+              // addCourseInfos(userCourse);
+              setProgress(1);
             }
           }}
         >
-          Choose Plan
+          Devam
         </button>
       </FormControl>
     </div>

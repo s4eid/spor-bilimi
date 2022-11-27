@@ -1,36 +1,36 @@
 export const quizDataGoal = [
   {
     img: "/quiz/goal/SLIM_SHREDDED_BODY.webp",
-    name: "Lose Weight",
-    value: "lose_weight",
+    name: "Kilo Vermek",
+    value: "kilo_vermek",
   },
   {
     img: "/quiz/goal/BEACH_BODY.webp",
-    name: "Get Sheredded",
-    value: "get_sheredded",
+    name: "Sheredded Olmak",
+    value: "sheredded_olmak",
   },
   {
     img: "/quiz/goal/HERO.webp",
-    name: "Gain Muscle",
-    value: "gain_muscle",
+    name: "Kas Yapmak",
+    value: "kas_yapmak",
   },
 ];
 
 export const quizDataTarget = [
   {
     img: "/quiz/target/ATHLETE.webp",
-    name: "Athlete",
-    value: "athlete",
+    name: "Atlet",
+    value: "atlet",
   },
   {
     img: "/quiz/target/HERO.webp",
-    name: "Hero",
-    value: "hero",
+    name: "Kahraman",
+    value: "kahraman",
   },
   {
     img: "/quiz/target/BODYBUILDER.webp",
-    name: "Bodybuilder",
-    value: "bodybuilder",
+    name: "Body Builder",
+    value: "body_builder",
   },
 ];
 
@@ -55,22 +55,22 @@ export const quizDataBodyType = [
 export const quizDataProblems = [
   {
     img: "/quiz/weak/arms.webp",
-    name: "Slim Arms",
-    value: "arm",
+    name: "ince kollar",
+    value: "kollar",
   },
   {
     img: "/quiz/weak/chest.webp",
-    name: "Weak Chest",
-    value: "chest",
+    name: "zayıf göğüs",
+    value: "göğüs",
   },
   {
     img: "/quiz/weak/legs.webp",
-    name: "slim Legs",
+    name: "ince bacaklar",
     value: "legs",
   },
   {
     img: "/quiz/weak/tummy.webp",
-    name: "weak Tummy",
-    value: "tummy",
+    name: "zayıf karın",
+    value: "karın",
   },
 ];

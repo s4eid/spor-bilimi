@@ -38,6 +38,9 @@
   align-items: center;
   width: 50%;
   color: colors.$primary_white;
+  img {
+    border-radius: 30px;
+  }
 }
 .dataAndBackC {
   display: flex;

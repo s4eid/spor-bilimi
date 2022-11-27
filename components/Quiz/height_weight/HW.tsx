@@ -16,7 +16,7 @@ const HW = () => {
   return (
     <div className={hw.mainContainer}>
       <div className={hw.quizContainer}>
-        <h2>What Is Your Weight And Height (kg-cm) ?</h2>
+        <h2>Kilonuz ve Boyunuz (kg-cm) Nedir?</h2>
         <div className={hw.container}>
           <Formik
             initialValues={initialValues}
@@ -38,7 +38,7 @@ const HW = () => {
                     <Field
                       as={TextField}
                       type="text"
-                      label="Height"
+                      label="Boyunuz"
                       name="height"
                       color="primary"
                       className={hw.field}
@@ -52,7 +52,7 @@ const HW = () => {
                       </div>
                     ) : (
                       <div className={hw.errorC}>
-                        <p>Plaese Enter Your Height(cm)</p>
+                        <p>Lütfen Boyunuzu Giriniz(cm)</p>
                       </div>
                     )}
                   </div>
@@ -62,7 +62,7 @@ const HW = () => {
                     <Field
                       as={TextField}
                       type="text"
-                      label="Weight"
+                      label="Kilonuz"
                       name="weight"
                       className={hw.field}
                       enterKeyHint="next"
@@ -75,7 +75,7 @@ const HW = () => {
                       </div>
                     ) : (
                       <div className={hw.errorC}>
-                        <p>Plaese Enter Your Weight (kg)</p>
+                        <p>Lütfen Kilonuzu Giriniz (kg)</p>
                       </div>
                     )}
                   </div>
@@ -86,7 +86,7 @@ const HW = () => {
                       as={TextField}
                       type="text"
                       name="targetWeight"
-                      label="Target Weight"
+                      label="Hedef Kilonuz"
                       className={hw.field}
                       enterKeyHint="next"
                       numeric
@@ -98,7 +98,7 @@ const HW = () => {
                       </div>
                     ) : (
                       <div className={hw.errorC}>
-                        <p>Plaese Enter Your Target Weight (kg)</p>
+                        <p>Lütfen Hedef Kilonuzu Giriniz (kg)</p>
                       </div>
                     )}
                   </div>
@@ -109,7 +109,7 @@ const HW = () => {
                       type="text"
                       as={TextField}
                       name="age"
-                      label="Age"
+                      label="Yaş"
                       className={hw.field}
                       enterKeyHint="done"
                       numeric
@@ -121,7 +121,7 @@ const HW = () => {
                       </div>
                     ) : (
                       <div className={hw.errorC}>
-                        <p>Plaese Enter Your Age</p>
+                        <p>Lütfen Yaşınızi Girin?</p>
                       </div>
                     )}
                   </div>
@@ -132,7 +132,7 @@ const HW = () => {
                     disabled={!isValid && dirty}
                     className={!isValid ? hw.loginBtnD : hw.loginBtn}
                   >
-                    Next
+                    Devam
                   </button>
                 </div>
               </Form>

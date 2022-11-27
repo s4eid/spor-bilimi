@@ -9,7 +9,7 @@ const Problem: NextPageWithLayout = () => {
   return (
     <QuizPage
       nextPath="height-weight"
-      question="Your Weak Areas?"
+      question="Zayıf Alanlarınız??"
       quizData={quizDataProblems}
     />
   );

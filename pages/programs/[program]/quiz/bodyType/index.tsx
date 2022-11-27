@@ -9,7 +9,7 @@ const BodyType: NextPageWithLayout = () => {
   return (
     <QuizPage
       nextPath="problem"
-      question="What Is Your Body Type?"
+      question="Vücut Tipin Nedir?"
       quizData={quizDataBodyType}
     />
   );

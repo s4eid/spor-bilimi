@@ -107,7 +107,7 @@ const QuizPage = ({ quizData, nextPath, question }: Props) => {
                 router.push(`/programs/${programRoute}/quiz/${nextPath}`);
               }}
             >
-              Next
+              Devam
             </button>
           </>
         )}

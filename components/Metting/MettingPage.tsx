@@ -24,20 +24,15 @@ const MettingPage = () => {
   return (
     <div className={metting.mainC}>
       <div className={metting.personC}>
-        <Image src="/person.webp" height={100} width={100} layout="fixed" />
-        <h2>Metting Call With Ahmed</h2>
-        <p>
-          This is a 45 minute call to see whether you're a good fit to join the
-          upper echelon of agency owners inside of Copy Paste Agency. We'll
-          either phone you or the call will be hosted on Zoom, based on your
-          preference in the survey.
-        </p>
+        <Image src="/other.jpeg" height={100} width={100} layout="fixed" />
+        <h2>Dr. Okan Mi̇çooğullari ile Görüşme</h2>
+        <p>görüşme süresi 45 dakikadır ve zoom üzerinden yapılacaktır.</p>
       </div>
       <div className={metting.mettingC}>
         <LocalizationProvider dateAdapter={AdapterMoment}>
           <DateTimePicker
             renderInput={(props) => <TextField {...props} />}
-            label="Pick A Date & Time"
+            label="Zaman Belirleyin"
             maxDate={moment().clone().endOf("year")}
             minDate={moment()}
             //     minTime={date}
@@ -66,7 +61,7 @@ const MettingPage = () => {
           router.push(`/programs/${programRouter}/payment`);
         }}
       >
-        Set Metting
+        Tamam
       </button>
     </div>
   );

@@ -35,7 +35,7 @@ const YearsPage = () => {
   return (
     <div className={years.mainContainer}>
       <div className={years.quizContainer}>
-        <h2>What Is Your Current Level Of Fitness?</h2>
+        <h2>Mevcut Fitness Düzeyiniz Nedir?</h2>
         <div className={years.rangeC}>
           <Slider
             aria-label="Temperature"
@@ -52,17 +52,17 @@ const YearsPage = () => {
         </div>
         <div className={years.holder}>
           {valueYears == 0 ? (
-            <p>I Did Not Do Any Training At All 😞</p>
+            <p>Hiç Antrenman Yapmadım 😞</p>
           ) : valueYears == 1 ? (
-            <p>I Have Been Worked Less Then 1 Year 🍎</p>
+            <p>1 Yıldan Az Çalıştım 🍎</p>
           ) : valueYears == 2 ? (
-            <p>I Have Been Worked More Then 1 Years 👊</p>
+            <p>1 Yıldan Fazla Çalıştım 👊</p>
           ) : valueYears == 3 ? (
-            <p>I Have Been Worked More Then 2 Years 🥉</p>
+            <p>2 Yıldan Fazla Çalıştım 🥉</p>
           ) : valueYears == 4 ? (
-            <p>I Have Been Worked More Then 3 Years 🥈</p>
+            <p>3 Yıldan Fazla Çalıştım 🥈</p>
           ) : (
-            <p>Professional Just Need To Get Better 🥇</p>
+            <p>Profesyonelim Sadece Daha Iyi Olmak Istiyorum 🥇</p>
           )}
         </div>
         <button
@@ -73,7 +73,7 @@ const YearsPage = () => {
             // handleClickOpen();
           }}
         >
-          Next
+          Devam
         </button>
       </div>
       {/* <Dialog

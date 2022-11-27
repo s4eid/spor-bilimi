@@ -9,7 +9,7 @@ const Target: NextPageWithLayout = () => {
   return (
     <QuizPage
       nextPath="bodyType"
-      question="Choose The Body You Are Interest"
+      question="Ilgilendiğiniz Bedeni Seçin?"
       quizData={quizDataTarget}
     />
   );

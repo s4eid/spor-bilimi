@@ -7,6 +7,7 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 interface Props {
   children: JSX.Element;
@@ -25,19 +26,25 @@ const Footer = ({ children }: Props) => {
               <p>Privacy And Policy</p>
             </div>
             <div className={footer.linksC}>
-              <h2>Programs</h2>
-              <p>12 Week Program</p>
+              <h2>Programlar</h2>
+              <Link href={"/programs/1b4f3136-55e6-4b7e-aca6-8e2b73cd72d1"}>
+                <p className={footer.linkChild}>
+                  Zihinsel ve Fiziksel Programı
+                </p>
+              </Link>
             </div>
             <div className={footer.linksC}>
-              <h2>Coporate</h2>
+              <h2>Kurumsal</h2>
               <p>About Us</p>
               <p>Contact</p>
             </div>
           </div>
           <div className={footer.social}>
-            <div className={footer.IconHolder}>
-              <FontAwesomeIcon icon={faInstagram} />
-            </div>
+            <Link href={"https://www.instagram.com/sporbilimii/"}>
+              <div className={footer.IconHolder}>
+                <FontAwesomeIcon icon={faInstagram} />
+              </div>
+            </Link>
             <div className={footer.IconHolder}>
               <FontAwesomeIcon icon={faTelegram} />
             </div>

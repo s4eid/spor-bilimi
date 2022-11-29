@@ -31,14 +31,14 @@ export const navSItems = [
     link: "/blogs",
     id: 3,
   },
-  {
-    name: "My Account",
-    link: "/account",
-    id: 4,
-  },
-  {
-    name: "Login/Register",
-    link: "/login",
-    id: 5,
-  },
+  // {
+  //   name: "My Account",
+  //   link: "/account",
+  //   id: 4,
+  // },
+  // {
+  // name: "Login/Register",
+  //   link: "/login",
+  //   id: 5,
+  // },
 ];

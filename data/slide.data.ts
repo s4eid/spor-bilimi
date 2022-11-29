@@ -1,14 +1,14 @@
 export const slideItems = [
   {
-    img: "/student.png",
+    img: "/s_1.jpeg",
   },
   {
-    img: "/student_2.png",
+    img: "/s_2.jpeg",
   },
-  {
-    img: "/student_3.jpg",
-  },
-  {
-    img: "/student_4.png",
-  },
+  // {
+  //   img: "/student_3.jpg",
+  // },
+  // {
+  //   img: "/student_4.png",
+  // },
 ];

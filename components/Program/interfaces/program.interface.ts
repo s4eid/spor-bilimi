@@ -16,6 +16,6 @@ export interface Trainer {
 }
 
 export interface Plan {
-  price: string;
+  price: number;
   time: string;
 }

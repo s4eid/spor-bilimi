@@ -102,8 +102,8 @@ const QuizPage = ({ quizData, nextPath, question }: Props) => {
             <button
               onClick={() => {
                 addWeak(checked);
-                router.push(`/programs/${programRoute}/payment`);
-                // router.push(`/programs/${programRoute}/quiz/${nextPath}`);
+                // router.push(`/programs/${programRoute}/payment`);
+                router.push(`/programs/${programRoute}/quiz/${nextPath}`);
               }}
             >
               Devam

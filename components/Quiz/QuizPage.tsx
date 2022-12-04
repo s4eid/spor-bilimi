@@ -50,7 +50,6 @@ const QuizPage = ({ quizData, nextPath, question }: Props) => {
                 className={quiz.holder}
                 key={index}
                 onClick={() => {
-                  console.log(q.name);
                   if (path[path.length - 1] == "quiz") {
                     addGoal(q.value);
                   }
@@ -102,9 +101,9 @@ const QuizPage = ({ quizData, nextPath, question }: Props) => {
             ))}
             <button
               onClick={() => {
-                console.log(checked);
                 addWeak(checked);
-                router.push(`/programs/${programRoute}/quiz/${nextPath}`);
+                router.push(`/programs/${programRoute}/payment`);
+                // router.push(`/programs/${programRoute}/quiz/${nextPath}`);
               }}
             >
               Devam

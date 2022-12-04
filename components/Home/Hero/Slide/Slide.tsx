@@ -76,7 +76,7 @@ const Slide = ({ person, direction, page, paginate }: Props) => {
             router.push("/programs/1b4f3136-55e6-4b7e-aca6-8e2b73cd72d1")
           }
         >
-          Araştır
+          Katıl
         </button>
       </div>
     </motion.div>

@@ -24,6 +24,20 @@
     font-size: fonts.$secondary_font_size;
   }
 }
+.mainHolder {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+.innerHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 70%;
+}
 
 .mainC {
   display: flex;

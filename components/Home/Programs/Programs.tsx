@@ -25,9 +25,14 @@ const Programs = ({ courses }: Props) => {
               {/* <h2>{p.name}</h2>
               <p>{p.title}</p> */}
               <h2>Zihinsel ve Fiziksel Programı</h2>
-              <p>{p.title}</p>
+              <p>
+                hayatına ve sağlığına önem veriyorsan bu kurs senin için
+                yapılmış, profesiyonel ekibimzle sizin hayat kalitenize
+                yukseltecez
+                {/* {p.title} */}
+              </p>
               <button onClick={() => router.push(`/programs/${p.course_id}`)}>
-                Araştır
+                Katıl
               </button>
             </div>
             <div className={programs.startC}>

@@ -67,7 +67,7 @@ const Nav = ({ children }: Props) => {
             ))}
           </ul>
         </div>
-        <div className={nav.loginHolder}>
+        {/* <div className={nav.loginHolder}>
           {!user.email ? (
             <div className={nav.loginContainer}>
               <Link href="/login">
@@ -123,7 +123,7 @@ const Nav = ({ children }: Props) => {
               </Menu>
             </div>
           )}
-        </div>
+        </div> */}
         <div className={nav.menuContainer} onClick={() => setNavOpen(!navOpen)}>
           <FontAwesomeIcon
             icon={faBars}

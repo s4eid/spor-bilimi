@@ -4,11 +4,11 @@ export const quizDataGoal = [
     name: "Kilo Vermek",
     value: "kilo_vermek",
   },
-  {
-    img: "/quiz/goal/BEACH_BODY.webp",
-    name: "Sheredded Olmak",
-    value: "sheredded_olmak",
-  },
+  // {
+  //   img: "/quiz/goal/BEACH_BODY.webp",
+  //   name: "Sheredded Olmak",
+  //   value: "sheredded_olmak",
+  // },
   {
     img: "/quiz/goal/HERO.webp",
     name: "Kas Yapmak",
@@ -37,18 +37,18 @@ export const quizDataTarget = [
 export const quizDataBodyType = [
   {
     img: "/quiz/bodyType/SLIM_BODY.webp",
-    name: "Ectomorph",
-    value: "ectomorph",
+    name: "Ektomorf",
+    value: "ektomorf",
   },
   {
     img: "/quiz/bodyType/NORMAL_BODY.webp",
-    name: "Mesomorph",
-    value: "mesomorph",
+    name: "Mezomorf",
+    value: "mezomorf",
   },
   {
     img: "/quiz/bodyType/FAT_BODY.webp",
-    name: "Endomorph",
-    value: "endomorph",
+    name: "Endomorf",
+    value: "endomorf",
   },
 ];
 

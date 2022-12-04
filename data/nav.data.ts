@@ -4,11 +4,11 @@ export const navItems = [
     link: "/",
     id: 1,
   },
-  // {
-  //   name: "Programlar",
-  //   link: "/programs",
-  //   id: 2,
-  // },
+  {
+    name: "Zihinsel ve Fiziksel Programı",
+    link: "/programs/1b4f3136-55e6-4b7e-aca6-8e2b73cd72d1",
+    id: 2,
+  },
   {
     name: "Blog",
     link: "/blogs",
@@ -21,11 +21,11 @@ export const navSItems = [
     link: "/",
     id: 1,
   },
-  // {
-  //   name: "Programlar",
-  //   link: "/programs",
-  //   id: 2,
-  // },
+  {
+    name: "Zihinsel ve Fiziksel Programı",
+    link: "/programs/1b4f3136-55e6-4b7e-aca6-8e2b73cd72d1",
+    id: 2,
+  },
   {
     name: "Blog",
     link: "/blogs",

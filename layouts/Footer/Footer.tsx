@@ -45,12 +45,15 @@ const Footer = ({ children }: Props) => {
                 <FontAwesomeIcon icon={faInstagram} />
               </div>
             </Link>
-            <div className={footer.IconHolder}>
+            {/* <div className={footer.IconHolder}>
               <FontAwesomeIcon icon={faTelegram} />
-            </div>
-            <div className={footer.IconHolder}>
-              <FontAwesomeIcon icon={faWhatsapp} />
-            </div>
+            </div> */}
+
+            <Link href={"https://wa.me/905525481198"}>
+              <div className={footer.IconHolder}>
+                <FontAwesomeIcon icon={faWhatsapp} />
+              </div>
+            </Link>
           </div>
         </div>
         <div className={footer.container}>

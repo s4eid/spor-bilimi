@@ -57,22 +57,22 @@ const Paymentpage = ({
             height={100}
           /> */}
           <p>
-            Test
+            Zihinsel ve Fiziksel Programı
             {/* {course.course.name} */}
           </p>
         </div>
         <div className={payment.quizDetails}>
-          <p>Current Weight 📆</p>
+          <p>Mevcut Kilo 📆</p>
           <p>{quiz.hW.weight} 🇰🇬</p>
         </div>
         <div className={payment.quizDetails}>
-          <p>Target Weight 🏆</p>
+          <p>Hedef Kilo 🏆</p>
           <p>{quiz.hW.target_weight} 🇰🇬</p>
         </div>
-        <div className={payment.quizDetails}>
+        {/* <div className={payment.quizDetails}>
           <p>Metting Time 📅</p>
           <p>{moment(metting).format("MMMM Do YYYY, h:mm:ss a")}</p>
-        </div>
+        </div> */}
       </div>
       {progress == 0 ? (
         <Plan

@@ -23,6 +23,7 @@ Home.getLayout = function getLayout(page: ReactElement) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const client = initializeApollo();
+  console.log("l");
   await client.query({
     query: GET_COURSES,
   });

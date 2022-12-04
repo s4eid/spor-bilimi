@@ -9,8 +9,9 @@ import { GET_COURSES } from "../graphql/courses/query/getCourses";
 import { useQuery } from "@apollo/client";
 
 const Home: NextPageWithLayout = () => {
-  const { data, loading } = useQuery(GET_COURSES);
-  return <>{!loading ? <HomePage courses={data.courses} /> : <p>loading</p>}</>;
+  // const { data, loading } = useQuery(GET_COURSES);
+  // return <>{!loading ? <HomePage courses={data.courses} /> : <p>loading</p>}</>;
+  return <div>helo</div>;
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
@@ -21,18 +22,17 @@ Home.getLayout = function getLayout(page: ReactElement) {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const client = initializeApollo();
-  console.log("l");
-  await client.query({
-    query: GET_COURSES,
-  });
-  return {
-    props: {
-      initialApolloState: client.cache.extract(),
-    },
-    // revalidate: 100,
-  };
-};
+// export const getStaticProps: GetStaticProps = async () => {
+//   const client = initializeApollo();
+//   await client.query({
+//     query: GET_COURSES,
+//   });
+//   return {
+//     props: {
+//       initialApolloState: client.cache.extract(),
+//     },
+//     // revalidate: 100,
+//   };
+// };
 
 export default Home;

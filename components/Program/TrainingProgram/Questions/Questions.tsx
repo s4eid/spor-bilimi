@@ -23,7 +23,7 @@ const Questions = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Atletik performans full paket aldığınızda haftada 2 gün spor
+            Atletik performans full paket aldığınızda haftada 1 gün spor
             psikoloğumuz ile bire bir görüntülü görüşeceksiniz. Kilo alma-verme
             full paket aldığınızda haftada 1 gün spor psikoloğumuz ile bire bir
             görüntülü görüşeceksiniz. Hareket ve antrenman bilimleri uzmanımız

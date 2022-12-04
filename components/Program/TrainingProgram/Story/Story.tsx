@@ -5,7 +5,7 @@ import story from "./story.module.scss";
 const Story = () => {
   return (
     <div className={story.mainC}>
-      <h2>Zihinsel Performansine Artir 🧠</h2>
+      <h2>Zihinsel Performans Koçu 🧠</h2>
       <div className={story.holder}>
         <div className={story.textC}>
           <h4>Zihinsel Performans</h4>

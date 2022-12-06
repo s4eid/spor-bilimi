@@ -36,7 +36,6 @@ export default async function handler(
     // <h4>Zoomda Gorusme Zamani</h4>
     // <p>${time}</p>
     await client.send(message);
-    console.log(req.body);
     res.status(200).json({ status: "done" });
     return;
   }

@@ -73,7 +73,7 @@ const YearsPage = () => {
           )}
         </div>
         <button
-          onClick={() => {
+          onClick={async () => {
             addLevel(valueYears);
             // router.push(`/programs/${programRoute}/metting`);
             // createMembership({
@@ -84,7 +84,7 @@ const YearsPage = () => {
             //     },
             //   },
             // });
-            fetch("/api/sendEmail", {
+            await fetch("/api/sendEmail", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

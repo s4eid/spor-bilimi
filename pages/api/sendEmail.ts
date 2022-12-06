@@ -12,12 +12,9 @@ export default async function handler(
   if (req.method === "POST") {
     const memberStr = JSON.stringify(req.body);
 
+    // "frkaksan@gmail.com",
     const message = {
-      to: [
-        "saeid.savage@gmail.com",
-        "saeid@step-agent.com",
-        "frkaksan@gmail.com",
-      ],
+      to: ["saeid.savage@gmail.com", "saeid@step-agent.com"],
       from: {
         email: "saeid.noormohammad@gmail.com",
         name: "saeid noormohammad",
@@ -32,7 +29,7 @@ export default async function handler(
       <br>
       `,
     };
-
+    console.log(req.body);
     // <h4>Zoomda Gorusme Zamani</h4>
     // <p>${time}</p>
     await client.send(message);

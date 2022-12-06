@@ -10,10 +10,17 @@ import { actionCreators } from "../../../Redux/Actions/Quiz";
 // import DialogContent from "@mui/material/DialogContent";
 // import DialogContentText from "@mui/material/DialogContentText";
 // import DialogTitle from "@mui/material/DialogTitle";
+import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
+import { CREATE_MEMBERSHIP } from "../../../graphql/userCourse/mutation/createMembership";
+import { Quiz } from "../../../Redux/Interfaces/Quiz";
+import { useSelector } from "react-redux";
+import { State } from "../../../Redux/Reducers/rootReducer";
 
 const YearsPage = () => {
   const [valueYears, setValueYears] = useState<number>(0);
+  const [createMembership, { data }] = useMutation(CREATE_MEMBERSHIP);
+  const { quiz }: { quiz: Quiz } = useSelector((state: State) => state);
   const dispatch = useDispatch();
   const router = useRouter();
   const programRoute = router.query.program;
@@ -69,6 +76,14 @@ const YearsPage = () => {
           onClick={() => {
             addLevel(valueYears);
             // router.push(`/programs/${programRoute}/metting`);
+            createMembership({
+              variables: {
+                createMembership: {
+                  quiz: quiz,
+                  // time: _metting,
+                },
+              },
+            });
             router.push(`/programs/${programRoute}/payment`);
             // handleClickOpen();
           }}

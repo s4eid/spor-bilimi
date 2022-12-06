@@ -66,7 +66,7 @@ export const quizDataProblems = [
   {
     img: "/quiz/weak/legs.webp",
     name: "ince bacaklar",
-    value: "legs",
+    value: "bacaklar",
   },
   {
     img: "/quiz/weak/tummy.webp",

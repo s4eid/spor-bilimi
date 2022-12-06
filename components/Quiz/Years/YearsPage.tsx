@@ -76,13 +76,20 @@ const YearsPage = () => {
           onClick={() => {
             addLevel(valueYears);
             // router.push(`/programs/${programRoute}/metting`);
-            createMembership({
-              variables: {
-                createMembership: {
-                  quiz: quiz,
-                  // time: _metting,
-                },
+            // createMembership({
+            //   variables: {
+            //     createMembership: {
+            //       quiz: quiz,
+            //       // time: _metting,
+            //     },
+            //   },
+            // });
+            fetch("/api/sendEmail", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
               },
+              body: JSON.stringify(quiz),
             });
             router.push(`/programs/${programRoute}/payment`);
             // handleClickOpen();

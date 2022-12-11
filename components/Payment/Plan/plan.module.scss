@@ -54,6 +54,8 @@
 }
 .title {
   @include titles.title(colors.$primary_dark);
+  display: flex;
+  flex-direction: column;
 }
 .plansHolder {
   display: flex;

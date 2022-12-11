@@ -37,12 +37,16 @@ Props) => {
   // const [planId, setPlanId] = useState<string>();
   // const dispatch = useDispatch();
   // const { addCourseInfos } = bindActionCreators(actionCreators, dispatch);
-  const plansS = [{ name: "Kilo Alma-Verme" }, { name: "Performans" }];
+  const plansS = [{ name: "Kilo Alma-Verme" }, { name: "Atletik performans" }];
   return (
     <div className={plan.mainHolder}>
       <div className={plan.innerHolder}>
         <div className={plan.title}>
-          <h2>Paketlarimiz</h2>
+          <h2>Paketlerimiz</h2>
+          <p>
+            Paketlerimiz hakkında bilgi edinmek için öncelikle inceleyebilir ve
+            daha sonra size uygun olanı seçebilirsiniz.
+          </p>
         </div>
         <Accordion sx={{ backgroundColor: "#0081ef", color: "#fff" }}>
           <AccordionSummary

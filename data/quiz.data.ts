@@ -1,7 +1,7 @@
 export const quizDataGoal = [
   {
     img: "/quiz/goal/SLIM_SHREDDED_BODY.webp",
-    name: "Kilo Vermek",
+    name: "Kilo vermek istiyorum",
     value: "kilo_vermek",
   },
   // {
@@ -11,7 +11,7 @@ export const quizDataGoal = [
   // },
   {
     img: "/quiz/goal/HERO.webp",
-    name: "Kas Yapmak",
+    name: "Kas yapmak istiyorum",
     value: "kas_yapmak",
   },
 ];

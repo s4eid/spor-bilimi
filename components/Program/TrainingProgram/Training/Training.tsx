@@ -5,7 +5,7 @@ import training from "./training.module.scss";
 const Training = () => {
   return (
     <div className={training.mainC}>
-      <h2>Hareket ve Antrenman Koçu 💹</h2>
+      <h2>Hareket ve Antrenman Bilimleri Uzmanı 💹</h2>
       <div className={training.holder}>
         <div className={training.textC}>
           <h4>Hareket ve Antrenman</h4>

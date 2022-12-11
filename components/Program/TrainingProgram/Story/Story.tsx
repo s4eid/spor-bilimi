@@ -8,7 +8,7 @@ const Story = () => {
       <h2>Zihinsel Performans Koçu 🧠</h2>
       <div className={story.holder}>
         <div className={story.textC}>
-          <h4>Zihinsel Performans</h4>
+          <h4>Zihinsel Performans Koçu</h4>
           <p>
             Doç. Dr. Okan MİÇOOĞULLARI: Zihinsel performans koçuyum. Devlet
             üniversitesinde akademisyen olarak görev yapıyorum. Her yıl yüzlerce

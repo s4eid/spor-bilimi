@@ -57,7 +57,7 @@ const Paymentpage = ({
             height={100}
           /> */}
           <p>
-            Zihinsel ve Fiziksel Programı
+            Zihinsel ve Fiziksel Antrenman Programı
             {/* {course.course.name} */}
           </p>
         </div>

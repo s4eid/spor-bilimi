@@ -77,8 +77,8 @@ const TrainingProgram = ({ course }: Props) => {
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              Sizi Daha İyi Tanımak ve Size Özel Bir Program Hazırlamak İçin 2
-              Dakikalık Bir Sınava Getireceğiz.
+              Sizi daha iyi tanımak ve size özel bir program hazırlamak için
+              maksimum 2 dakika sürecek bir anket doldurmanızı istiyoruz
             </DialogContentText>
           </DialogContent>
           <DialogActions>

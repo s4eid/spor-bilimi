@@ -9,7 +9,7 @@ const Quiz: NextPageWithLayout = () => {
   return (
     <QuizPage
       nextPath="target"
-      question="Hedefin Nedir??"
+      question="Hedefiniz nedir?"
       quizData={quizDataGoal}
     />
   );

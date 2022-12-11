@@ -13,7 +13,10 @@ const By = ({ first_name, image, last_name }: Trainer) => {
         {/* <p>
           By {first_name} {last_name}
         </p> */}
-        <p>Furkan Aksan Ve Dr. Okan Mi̇çooğullari</p>
+        <p>
+          Hareket ve Antrenman Bilimleri Uzmanı Faruk Aksan Doç Dr. Okan
+          Mi̇çooğullari
+        </p>
         <Avatar alt="Oaeid noormohammad" src={image} />
       </div>
     </div>

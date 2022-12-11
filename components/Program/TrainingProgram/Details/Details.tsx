@@ -9,7 +9,9 @@ const Details = ({ details }: Props) => {
     <div className={detailsS.mainC}>
       {/* <h3>{details}</h3> */}
       <h3>
-        Eğer Zihinsel Ve Fiziksel Kendine Geliştirmek İstiyorsan Doğru Yerdesin
+        {/* Eğer Zihinsel Ve Fiziksel Kendine Geliştirmek İstiyorsan Doğru Yerdesin */}
+        Zihinsel ve Fiziksel olarak kendini geliştirmek istiyorsan doğru
+        yerdesin, İncelemeye devam et.
       </h3>
     </div>
   );

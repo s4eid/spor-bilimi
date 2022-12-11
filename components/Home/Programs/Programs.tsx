@@ -27,8 +27,8 @@ const Programs = ({ courses }: Props) => {
               <h2>Zihinsel ve Fiziksel Programı</h2>
               <p>
                 hayatına ve sağlığına önem veriyorsan bu kurs senin için
-                yapılmış, profesiyonel ekibimzle sizin hayat kalitenize
-                yukseltecez
+                yapılmış,Profesyonel ekibimizle sizin hayat Kalitenizi
+                yükselteceğiz
                 {/* {p.title} */}
               </p>
               <button onClick={() => router.push(`/programs/${p.course_id}`)}>

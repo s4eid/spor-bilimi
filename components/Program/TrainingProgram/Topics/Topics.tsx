@@ -11,14 +11,14 @@ const Topics = () => {
   return (
     <div className={topic.mainC}>
       <div className={topic.holder}>
-        <p>Zihinsel</p>
+        <p>Zihinsel Antrenman</p>
         <FontAwesomeIcon icon={faBrain} />
       </div>
       <div className={topic.line}>
         <FontAwesomeIcon icon={faRepeat} />
       </div>
       <div className={topic.holder}>
-        <p>Antreman</p>
+        <p>Fiziksel Antrenman</p>
         <FontAwesomeIcon icon={faDumbbell} />
       </div>
     </div>

@@ -14,7 +14,11 @@ export default async function handler(
 
     // "frkaksan@gmail.com",
     const message = {
-      to: ["saeid.savage@gmail.com", "saeid@step-agent.com"],
+      to: [
+        "saeid.savage@gmail.com",
+        "saeid@step-agent.com",
+        "frkaksan@gmail.com",
+      ],
       from: {
         email: "saeid.noormohammad@gmail.com",
         name: "saeid noormohammad",

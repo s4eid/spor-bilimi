@@ -24,10 +24,10 @@ const Programs = ({ courses }: Props) => {
             <div className={programs.detailsC}>
               {/* <h2>{p.name}</h2>
               <p>{p.title}</p> */}
-              <h2>Zihinsel ve Fiziksel Programı</h2>
+              <h2>Zihinsel ve Fiziksel Antrenman Programı</h2>
               <p>
-                hayatına ve sağlığına önem veriyorsan bu kurs senin için
-                yapılmış,Profesyonel ekibimizle sizin hayat Kalitenizi
+                Hayatına ve sağlığına önem veriyorsan bu kurs senin için
+                yapılmış, profesyonel ekibimizle sizin hayat kalitenizi
                 yükselteceğiz
                 {/* {p.title} */}
               </p>

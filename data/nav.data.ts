@@ -9,11 +9,11 @@ export const navItems = [
     link: "/programs/1b4f3136-55e6-4b7e-aca6-8e2b73cd72d1",
     id: 2,
   },
-  {
-    name: "Blog",
-    link: "/blogs",
-    id: 3,
-  },
+  // {
+  //   name: "Blog",
+  //   link: "/blogs",
+  //   id: 3,
+  // },
 ];
 export const navSItems = [
   {
@@ -26,11 +26,11 @@ export const navSItems = [
     link: "/programs/1b4f3136-55e6-4b7e-aca6-8e2b73cd72d1",
     id: 2,
   },
-  {
-    name: "Blog",
-    link: "/blogs",
-    id: 3,
-  },
+  // {
+  //   name: "Blog",
+  //   link: "/blogs",
+  //   id: 3,
+  // },
   // {
   //   name: "My Account",
   //   link: "/account",

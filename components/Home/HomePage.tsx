@@ -15,7 +15,7 @@ const HomePage = ({ courses }: Props) => {
       <Hero />
       <Programs courses={courses} />
       <Students />
-      <LastArticles />
+      {/* <LastArticles /> */}
     </div>
   );
 };

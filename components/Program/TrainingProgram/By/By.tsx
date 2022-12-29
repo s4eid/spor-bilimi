@@ -14,8 +14,8 @@ const By = ({ first_name, image, last_name }: Trainer) => {
           By {first_name} {last_name}
         </p> */}
         <p>
-          Hareket ve Antrenman Bilimleri Uzmanı Faruk Aksan Doç Dr. Okan
-          Mi̇çooğullari
+          Hareket ve Antrenman Bilimleri Uzmanı Faruk AKSAN, Doç. Dr. Okan
+          MİÇOOĞULLARI
         </p>
         <Avatar alt="Oaeid noormohammad" src={image} />
       </div>

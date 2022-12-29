@@ -11,6 +11,7 @@
 }
 .title {
   @include titles.title(colors.$primary_dark);
+  text-align: center;
 }
 .detailsC {
   display: flex;

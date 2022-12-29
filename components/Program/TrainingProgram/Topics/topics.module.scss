@@ -10,6 +10,7 @@
 .holder {
   display: flex;
   justify-content: space-around;
+  text-align: center;
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
@@ -29,5 +30,6 @@
 @media screen and (max-width: 400px) {
   .mainC {
     gap: 5px;
+    width: 95%;
   }
 }

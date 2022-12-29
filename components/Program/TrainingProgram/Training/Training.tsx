@@ -8,7 +8,7 @@ const Training = () => {
       <h2>Hareket ve Antrenman Bilimleri Uzmanı 💹</h2>
       <div className={training.holder}>
         <div className={training.textC}>
-          <h4>Hareket ve Antrenman</h4>
+          {/* <h4>Hareket ve Antrenman</h4> */}
           <p>
             Hareket ve Antrenman Bilimleri Uzmanı Faruk AKSAN: Milli sporcuyum.
             Sporcularımızın antrenman (kuvvet, güç, hız, çeviklik, çabukluk,
